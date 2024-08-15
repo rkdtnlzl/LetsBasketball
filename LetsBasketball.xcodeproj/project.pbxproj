@@ -36,6 +36,7 @@
 		01E409742C6DCDB60006B86F /* Pretendard-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01E4096B2C6DCDB60006B86F /* Pretendard-Thin.ttf */; };
 		01E409752C6DCDB60006B86F /* Pretendard-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01E4096C2C6DCDB60006B86F /* Pretendard-ExtraLight.ttf */; };
 		01E409762C6DCDB60006B86F /* Pretendard-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01E4096D2C6DCDB60006B86F /* Pretendard-Black.ttf */; };
+		01E409782C6DD9C90006B86F /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E409772C6DD9C90006B86F /* UITextField+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		01E4096B2C6DCDB60006B86F /* Pretendard-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.ttf"; sourceTree = "<group>"; };
 		01E4096C2C6DCDB60006B86F /* Pretendard-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.ttf"; sourceTree = "<group>"; };
 		01E4096D2C6DCDB60006B86F /* Pretendard-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.ttf"; sourceTree = "<group>"; };
+		01E409772C6DD9C90006B86F /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				01E4095E2C6DC1A90006B86F /* UIViewController+.swift */,
+				01E409772C6DD9C90006B86F /* UITextField+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01E4094A2C6CDDE70006B86F /* APIUrl.swift in Sources */,
+				01E409782C6DD9C90006B86F /* UITextField+.swift in Sources */,
 				01E409582C6DBDF80006B86F /* HTTPHeaderFieldKey.swift in Sources */,
 				01E4095F2C6DC1A90006B86F /* UIViewController+.swift in Sources */,
 				01E409282C6CD0C60006B86F /* LoginViewController.swift in Sources */,
