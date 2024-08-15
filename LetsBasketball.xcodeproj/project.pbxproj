@@ -37,6 +37,9 @@
 		01E409752C6DCDB60006B86F /* Pretendard-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01E4096C2C6DCDB60006B86F /* Pretendard-ExtraLight.ttf */; };
 		01E409762C6DCDB60006B86F /* Pretendard-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01E4096D2C6DCDB60006B86F /* Pretendard-Black.ttf */; };
 		01E409782C6DD9C90006B86F /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E409772C6DD9C90006B86F /* UITextField+.swift */; };
+		01E4097B2C6DEBD10006B86F /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E4097A2C6DEBD10006B86F /* LoginViewModel.swift */; };
+		01E4097D2C6DECE10006B86F /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E4097C2C6DECE10006B86F /* JoinViewController.swift */; };
+		01E4097F2C6DF1550006B86F /* JoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E4097E2C6DF1550006B86F /* JoinView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +70,9 @@
 		01E4096C2C6DCDB60006B86F /* Pretendard-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.ttf"; sourceTree = "<group>"; };
 		01E4096D2C6DCDB60006B86F /* Pretendard-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.ttf"; sourceTree = "<group>"; };
 		01E409772C6DD9C90006B86F /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
+		01E4097A2C6DEBD10006B86F /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		01E4097C2C6DECE10006B86F /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
+		01E4097E2C6DF1550006B86F /* JoinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,7 +172,10 @@
 			isa = PBXGroup;
 			children = (
 				01E409272C6CD0C60006B86F /* LoginViewController.swift */,
+				01E4097A2C6DEBD10006B86F /* LoginViewModel.swift */,
 				01E409622C6DC4460006B86F /* LoginView.swift */,
+				01E4097C2C6DECE10006B86F /* JoinViewController.swift */,
+				01E4097E2C6DF1550006B86F /* JoinView.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -319,14 +328,17 @@
 				01E409782C6DD9C90006B86F /* UITextField+.swift in Sources */,
 				01E409582C6DBDF80006B86F /* HTTPHeaderFieldKey.swift in Sources */,
 				01E4095F2C6DC1A90006B86F /* UIViewController+.swift in Sources */,
+				01E4097F2C6DF1550006B86F /* JoinView.swift in Sources */,
 				01E409282C6CD0C60006B86F /* LoginViewController.swift in Sources */,
 				01E409612C6DC2110006B86F /* UserDefaultsManager.swift in Sources */,
+				01E4097B2C6DEBD10006B86F /* LoginViewModel.swift in Sources */,
 				01E4095C2C6DC0920006B86F /* TargetType.swift in Sources */,
 				01E409632C6DC4460006B86F /* LoginView.swift in Sources */,
 				01E409242C6CD0C60006B86F /* AppDelegate.swift in Sources */,
 				01E409482C6CDD020006B86F /* APIKey.swift in Sources */,
 				01E409542C6CE3100006B86F /* BaseView.swift in Sources */,
 				01E409262C6CD0C60006B86F /* SceneDelegate.swift in Sources */,
+				01E4097D2C6DECE10006B86F /* JoinViewController.swift in Sources */,
 				01E409512C6CE3050006B86F /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
