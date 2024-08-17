@@ -14,6 +14,7 @@ class LoginViewModel {
         let emailText: ControlProperty<String>
         let passwordText: ControlProperty<String>
         let loginTap: ControlEvent<Void>
+        let joinTap: ControlEvent<Void>
     }
     
     struct Output {
@@ -50,6 +51,10 @@ class LoginViewModel {
                     errorMessage.onNext("로그인 실패")
                 }
             })
+            .disposed(by: disposeBag)
+        
+        input.joinTap
+            .subscribe()
             .disposed(by: disposeBag)
         
         return Output(

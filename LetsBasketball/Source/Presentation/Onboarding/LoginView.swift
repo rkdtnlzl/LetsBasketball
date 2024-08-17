@@ -13,7 +13,7 @@ final class LoginView: BaseView {
     private let logoImageView = UIImageView()
     private let welcomeLabel = UILabel()
     let emailTextField = UITextField()
-    let passwordTextFeild = UITextField()
+    let passwordTextField = UITextField()
     let loginButton = UIButton()
     let joinButton = UIButton()
     
@@ -21,7 +21,7 @@ final class LoginView: BaseView {
         addSubview(logoImageView)
         addSubview(welcomeLabel)
         addSubview(emailTextField)
-        addSubview(passwordTextFeild)
+        addSubview(passwordTextField)
         addSubview(loginButton)
         addSubview(joinButton)
     }
@@ -41,12 +41,12 @@ final class LoginView: BaseView {
         emailTextField.layer.borderColor = UIColor.gray.cgColor
         emailTextField.layer.borderWidth = 0.7
         
-        passwordTextFeild.addLeftPadding()
-        passwordTextFeild.placeholder = "비밀번호 입력"
-        passwordTextFeild.backgroundColor = .white
-        passwordTextFeild.layer.cornerRadius = 10
-        passwordTextFeild.layer.borderColor = UIColor.gray.cgColor
-        passwordTextFeild.layer.borderWidth = 0.7
+        passwordTextField.addLeftPadding()
+        passwordTextField.placeholder = "비밀번호 입력"
+        passwordTextField.backgroundColor = .white
+        passwordTextField.layer.cornerRadius = 10
+        passwordTextField.layer.borderColor = UIColor.gray.cgColor
+        passwordTextField.layer.borderWidth = 0.7
         
         loginButton.setTitle("로그인하기", for: .normal)
         loginButton.setTitleColor(.white, for: .normal)
@@ -76,13 +76,13 @@ final class LoginView: BaseView {
             make.horizontalEdges.equalToSuperview().inset(20)
             make.height.equalTo(48)
         }
-        passwordTextFeild.snp.makeConstraints { make in
+        passwordTextField.snp.makeConstraints { make in
             make.top.equalTo(emailTextField.snp.bottom).offset(20)
             make.horizontalEdges.equalToSuperview().inset(20)
             make.height.equalTo(48)
         }
         loginButton.snp.makeConstraints { make in
-            make.top.equalTo(passwordTextFeild.snp.bottom).offset(30)
+            make.top.equalTo(passwordTextField.snp.bottom).offset(30)
             make.horizontalEdges.equalToSuperview().inset(20)
             make.height.equalTo(48)
         }

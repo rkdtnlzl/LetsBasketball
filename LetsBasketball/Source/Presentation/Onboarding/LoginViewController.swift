@@ -29,8 +29,9 @@ class LoginViewController: BaseViewController {
     func bind() {
         let input = LoginViewModel.Input(
             emailText: loginView.emailTextField.rx.text.orEmpty,
-            passwordText: loginView.passwordTextFeild.rx.text.orEmpty,
-            loginTap: loginView.loginButton.rx.tap
+            passwordText: loginView.passwordTextField.rx.text.orEmpty,
+            loginTap: loginView.loginButton.rx.tap,
+            joinTap: loginView.joinButton.rx.tap
         )
         
         let output = viewModel.transform(input: input)
@@ -47,6 +48,12 @@ class LoginViewController: BaseViewController {
                     print("로그인 실패")
                     owner.showAlert(title: "로그인을 실패하였습니다")
                 }
+            })
+            .disposed(by: disposeBag)
+        
+        input.joinTap
+            .bind(with: self, onNext: { owner, _ in
+                owner.navigationController?.pushViewController(JoinViewController(), animated: true)
             })
             .disposed(by: disposeBag)
     }
