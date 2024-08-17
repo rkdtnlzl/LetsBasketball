@@ -12,10 +12,10 @@ final class LoginView: BaseView {
     
     private let logoImageView = UIImageView()
     private let welcomeLabel = UILabel()
-    private let emailTextField = UITextField()
-    private let passwordTextFeild = UITextField()
-    private let loginButton = UIButton()
-    private let joinButton = UIButton()
+    let emailTextField = UITextField()
+    let passwordTextFeild = UITextField()
+    let loginButton = UIButton()
+    let joinButton = UIButton()
     
     override func configureHierarchy() {
         addSubview(logoImageView)
