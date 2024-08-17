@@ -42,13 +42,15 @@ final class JoinViewController: BaseViewController {
             .bind(to: joinView.joinButton.rx.isEnabled)
             .disposed(by: disposeBag)
         
+        output.nicknameValidation
+            .bind(to: joinView.nicknameValid.rx.text)
+            .disposed(by: disposeBag)
+        
         output.joinResult
             .bind(with: self, onNext: { owner, success in
                 if success {
-                    print("회원가입 성공")
                     owner.showAlert(title: "회원가입에 성공했습니다")
                 } else {
-                    print("회원가입 실패")
                     owner.showAlert(title: "회원가입에 실패했습니다")
                 }
             })
