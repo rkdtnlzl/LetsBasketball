@@ -39,7 +39,7 @@ class LoginViewModel {
         input.loginTap
             .withLatestFrom(data)
             .flatMapLatest { email, password -> Observable<Bool> in
-                return NetworkManager.login(email: email, password: password)
+                return OnboardingService.login(email: email, password: password)
                     .catch { error in
                         errorMessage.onNext("로그인 실패: \(error.localizedDescription)")
                         return Observable.just(false)

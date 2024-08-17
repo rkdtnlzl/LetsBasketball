@@ -12,6 +12,7 @@ final class JoinView: BaseView {
     
     let nicknameLabel = UILabel()
     let nicknameTextField = UITextField()
+    let nicknameValid = UILabel()
     let emailLabel = UILabel()
     let emailTextField = UITextField()
     let passwordLabel = UILabel()
@@ -22,6 +23,7 @@ final class JoinView: BaseView {
     override func configureHierarchy() {
         addSubview(nicknameLabel)
         addSubview(nicknameTextField)
+        addSubview(nicknameValid)
         addSubview(emailLabel)
         addSubview(emailTextField)
         addSubview(passwordLabel)
@@ -41,6 +43,10 @@ final class JoinView: BaseView {
         nicknameTextField.layer.cornerRadius = 10
         nicknameTextField.layer.borderColor = UIColor.gray.cgColor
         nicknameTextField.layer.borderWidth = 0.7
+        
+        nicknameValid.text = "닉네임유효성검사"
+        nicknameValid.font = UIFont(name: "Pretendard-Regular", size: 13)
+        nicknameValid.textColor = UIColor(named: "BaseColor")
         
         emailLabel.text = "이메일"
         emailLabel.font = UIFont(name: "Pretendard-Regular", size: 15)
@@ -89,8 +95,12 @@ final class JoinView: BaseView {
             make.horizontalEdges.equalToSuperview().inset(20)
             make.height.equalTo(48)
         }
+        nicknameValid.snp.makeConstraints { make in
+            make.top.equalTo(nicknameTextField.snp.bottom).offset(5)
+            make.horizontalEdges.equalToSuperview().inset(20)
+        }
         emailLabel.snp.makeConstraints { make in
-            make.top.equalTo(nicknameTextField.snp.bottom).offset(40)
+            make.top.equalTo(nicknameValid.snp.bottom).offset(40)
             make.horizontalEdges.equalToSuperview().inset(20)
             make.height.equalTo(20)
         }

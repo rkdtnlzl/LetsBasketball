@@ -1,5 +1,5 @@
 //
-//  NetworkManager.swift
+//  OnboardingService.swift
 //  LetsBasketball
 //
 //  Created by 강석호 on 8/17/24.
@@ -9,9 +9,9 @@ import Foundation
 import Alamofire
 import RxSwift
 
-final class NetworkManager {
+final class OnboardingService {
     
-    static let shared = NetworkManager()
+    static let shared = OnboardingService()
     
     private init() { }
     

@@ -42,7 +42,7 @@ class JoinViewModel {
         input.joinTap
             .withLatestFrom(data)
             .flatMapLatest { nickname, email, password -> Observable<Bool> in
-                return NetworkManager.join(email: email, password: password, nick: nickname)
+                return OnboardingService.join(email: email, password: password, nick: nickname)
                     .catch { error in
                         errorMessage.onNext("회원가입 실패: \(error)")
                         return Observable.just(false)
