@@ -9,21 +9,53 @@ import RxSwift
 import RxCocoa
 
 class LoginViewModel {
+    
+    struct Input {
+        let emailText: ControlProperty<String>
+        let passwordText: ControlProperty<String>
+        let loginTap: ControlEvent<Void>
+    }
+    
+    struct Output {
+        let isLoginEnabled: Observable<Bool>
+        let loginResult: Observable<Bool>
+        let errorMessage: Observable<String?>
+    }
+    
     private let disposeBag = DisposeBag()
     
-    let loginTapped = PublishSubject<Void>()
-    let joinTapped = PublishSubject<Void>()
-    
-    let navigateToMain = PublishSubject<Void>()
-    let navigateToJoin = PublishSubject<Void>()
-    
-    init() {
-        loginTapped
-            .bind(to: navigateToMain)
+    func transform(input: Input) -> Output {
+        let data = Observable.combineLatest(input.emailText, input.passwordText)
+        
+        let isLoginEnabled = data
+            .map { email, password in
+                return !email.isEmpty && !password.isEmpty
+            }
+        
+        let loginResult = PublishSubject<Bool>()
+        let errorMessage = PublishSubject<String?>()
+        
+        input.loginTap
+            .withLatestFrom(data)
+            .flatMapLatest { email, password -> Observable<Bool> in
+                return NetworkManager.login(email: email, password: password)
+                    .catch { error in
+                        errorMessage.onNext("로그인 실패: \(error.localizedDescription)")
+                        return Observable.just(false)
+                    }
+            }
+            .bind(onNext: { success in
+                loginResult.onNext(success)
+                if !success {
+                    errorMessage.onNext("로그인 실패")
+                }
+            })
             .disposed(by: disposeBag)
         
-        joinTapped
-            .bind(to: navigateToJoin)
-            .disposed(by: disposeBag)
+        return Output(
+            isLoginEnabled: isLoginEnabled,
+            loginResult: loginResult.asObservable(),
+            errorMessage: errorMessage.asObservable()
+        )
     }
 }
