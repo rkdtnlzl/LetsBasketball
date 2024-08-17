@@ -20,12 +20,24 @@ class JoinViewModel {
     struct Output {
         let isJoinEnabled: Observable<Bool>
         let joinResult: Observable<Bool>
-        let errorMessage: Observable<String?>
+        let nicknameValidation: Observable<String>
     }
     
     private let disposeBag = DisposeBag()
     
     func transform(input: Input) -> Output {
+        let nicknameValidation = input.nicknameText
+            .map { nickname -> String in
+                if nickname.isEmpty {
+                    return "닉네임을 입력해주세요"
+                } else if nickname.count < 3 || nickname.count > 6 {
+                    return "닉네임은 3자 이상 6자 이하로 입력해주세요"
+                } else if !nickname.isValidNickname {
+                    return "닉네임은 한글, 영어, 숫자만 사용 가능합니다"
+                } else {
+                    return "사용 가능한 닉네임입니다"
+                }
+            }
         let data = Observable.combineLatest(input.nicknameText,
                                             input.emailText,
                                             input.passwordText
@@ -33,33 +45,28 @@ class JoinViewModel {
         
         let isJoinEnabled = data
             .map { nickname, email, password in
-                return !email.isEmpty && !password.isEmpty && !nickname.isEmpty
+                return !email.isEmpty && !password.isEmpty && nickname.isValidNickname && nickname.count >= 3 && nickname.count <= 6
             }
         
         let joinResult = PublishSubject<Bool>()
-        let errorMessage = PublishSubject<String?>()
         
         input.joinTap
             .withLatestFrom(data)
             .flatMapLatest { nickname, email, password -> Observable<Bool> in
                 return OnboardingService.join(email: email, password: password, nick: nickname)
-                    .catch { error in
-                        errorMessage.onNext("회원가입 실패: \(error)")
+                    .catch { _ in
                         return Observable.just(false)
                     }
             }
             .bind(onNext: { success in
                 joinResult.onNext(success)
-                if !success {
-                    errorMessage.onNext("회원가입 실패")
-                }
             })
             .disposed(by: disposeBag)
         
         return Output(
             isJoinEnabled: isJoinEnabled,
             joinResult: joinResult.asObservable(),
-            errorMessage: errorMessage.asObservable()
+            nicknameValidation: nicknameValidation
         )
     }
 }
