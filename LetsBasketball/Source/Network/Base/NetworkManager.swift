@@ -44,4 +44,31 @@ final class NetworkManager {
             return Disposables.create()
         }
     }
+    
+    static func join(email: String, password: String, nick: String) -> Observable<Bool> {
+        return Observable.create { observer in
+            do {
+                let query = JoinQuery(email: email, password: password, nick: nick)
+                let request = try Router.join(query: query).asURLRequest()
+                
+                AF.request(request)
+                    .responseDecodable(of: JoinModel.self) { response in
+                        switch response.result {
+                        case .success(let success):
+                            print(success)
+                            observer.onNext(true)
+                            observer.onCompleted()
+                            
+                        case .failure(let failure):
+                            print(failure)
+                            observer.onNext(false)
+                            observer.onCompleted()
+                        }
+                    }
+            } catch {
+                observer.onError(error)
+            }
+            return Disposables.create()
+        }
+    }
 }
