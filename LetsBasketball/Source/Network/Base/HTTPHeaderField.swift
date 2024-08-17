@@ -1,5 +1,5 @@
 //
-//  HTTPHeaderFieldKey.swift
+//  HTTPHeaderField.swift
 //  LetsBasketball
 //
 //  Created by 강석호 on 8/15/24.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum HTTPHeaderFieldKey: String {
+enum Header: String {
     case authorization = "Authorization"
     case sesacKey = "SesacKey"
     case refresh = "Refresh"
