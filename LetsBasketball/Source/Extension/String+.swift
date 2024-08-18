@@ -19,4 +19,10 @@ extension String {
         let predicate = NSPredicate(format: "SELF MATCHES %@", emailRegex)
         return predicate.evaluate(with: self)
     }
+    
+    var isValidPassword: Bool {
+        let passwordRegex = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{6,}$"
+        let predicate = NSPredicate(format: "SELF MATCHES %@", passwordRegex)
+        return predicate.evaluate(with: self)
+    }
 }
