@@ -43,6 +43,11 @@ final class JoinViewController: BaseViewController {
             .bind(to: joinView.joinButton.rx.isEnabled)
             .disposed(by: disposeBag)
         
+        output.isJoinEnabled
+            .map { $0 ? UIColor(named: "BaseColor") : UIColor.gray }
+            .bind(to: joinView.joinButton.rx.backgroundColor)
+            .disposed(by: disposeBag)
+        
         output.nicknameValidation
             .bind(to: joinView.nicknameValid.rx.text)
             .disposed(by: disposeBag)

@@ -91,7 +91,7 @@ final class JoinView: BaseView {
         passwordConfirmValid.font = UIFont(name: "Pretendard-Regular", size: 13)
         passwordConfirmValid.textColor = UIColor(named: "BaseColor")
         
-        joinButton.setTitle("회원가입 완료", for: .normal)
+        joinButton.setTitle("회원가입", for: .normal)
         joinButton.setTitleColor(.white, for: .normal)
         joinButton.titleLabel?.font = UIFont(name: "Pretendard-SemiBold", size: 17)
         joinButton.backgroundColor = UIColor(named: "BaseColor")
