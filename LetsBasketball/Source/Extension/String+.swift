@@ -9,7 +9,7 @@ import Foundation
 
 extension String {
     var isValidNickname: Bool {
-        let nicknameRegex = "^[가-힣A-Za-z0-9]+$"
+        let nicknameRegex = "^[가-힣A-Za-z0-9]{3,6}$"
         let predicate = NSPredicate(format: "SELF MATCHES %@", nicknameRegex)
         return predicate.evaluate(with: self)
     }
