@@ -33,6 +33,7 @@ final class JoinViewController: BaseViewController {
             nicknameText: joinView.nicknameTextField.rx.text.orEmpty,
             emailText: joinView.emailTextField.rx.text.orEmpty,
             passwordText: joinView.passwordTextField.rx.text.orEmpty,
+            passwordConfirmText: joinView.passwordConfirmTextField.rx.text.orEmpty,
             joinTap: joinView.joinButton.rx.tap
         )
         
@@ -42,13 +43,32 @@ final class JoinViewController: BaseViewController {
             .bind(to: joinView.joinButton.rx.isEnabled)
             .disposed(by: disposeBag)
         
+        output.isJoinEnabled
+            .map { $0 ? UIColor(named: "BaseColor") : UIColor.gray }
+            .bind(to: joinView.joinButton.rx.backgroundColor)
+            .disposed(by: disposeBag)
+        
+        output.nicknameValidation
+            .bind(to: joinView.nicknameValid.rx.text)
+            .disposed(by: disposeBag)
+        
+        output.emailValidation
+            .bind(to: joinView.emailValid.rx.text)
+            .disposed(by: disposeBag)
+        
+        output.passwordValidation
+            .bind(to: joinView.passwordValid.rx.text)
+            .disposed(by: disposeBag)
+        
+        output.passwordConfirmValidation
+            .bind(to: joinView.passwordConfirmValid.rx.text)
+            .disposed(by: disposeBag)
+        
         output.joinResult
             .bind(with: self, onNext: { owner, success in
                 if success {
-                    print("회원가입 성공")
                     owner.showAlert(title: "회원가입에 성공했습니다")
                 } else {
-                    print("회원가입 실패")
                     owner.showAlert(title: "회원가입에 실패했습니다")
                 }
             })

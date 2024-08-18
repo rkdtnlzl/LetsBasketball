@@ -20,7 +20,6 @@ class LoginViewModel {
     struct Output {
         let isLoginEnabled: Observable<Bool>
         let loginResult: Observable<Bool>
-        let errorMessage: Observable<String?>
     }
     
     private let disposeBag = DisposeBag()
@@ -34,22 +33,17 @@ class LoginViewModel {
             }
         
         let loginResult = PublishSubject<Bool>()
-        let errorMessage = PublishSubject<String?>()
         
         input.loginTap
             .withLatestFrom(data)
             .flatMapLatest { email, password -> Observable<Bool> in
-                return NetworkManager.login(email: email, password: password)
-                    .catch { error in
-                        errorMessage.onNext("로그인 실패: \(error.localizedDescription)")
+                return OnboardingService.login(email: email, password: password)
+                    .catch { _ in
                         return Observable.just(false)
                     }
             }
             .bind(onNext: { success in
                 loginResult.onNext(success)
-                if !success {
-                    errorMessage.onNext("로그인 실패")
-                }
             })
             .disposed(by: disposeBag)
         
@@ -59,8 +53,7 @@ class LoginViewModel {
         
         return Output(
             isLoginEnabled: isLoginEnabled,
-            loginResult: loginResult.asObservable(),
-            errorMessage: errorMessage.asObservable()
+            loginResult: loginResult.asObservable()
         )
     }
 }

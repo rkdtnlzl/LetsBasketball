@@ -42,13 +42,14 @@
 		01E4097F2C6DF1550006B86F /* JoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E4097E2C6DF1550006B86F /* JoinView.swift */; };
 		01E409812C7079C30006B86F /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E409802C7079C30006B86F /* Router.swift */; };
 		01E409832C707D620006B86F /* LoginQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E409822C707D620006B86F /* LoginQuery.swift */; };
-		01E409852C707EFC0006B86F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E409842C707EFC0006B86F /* NetworkManager.swift */; };
+		01E409852C707EFC0006B86F /* OnboardingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E409842C707EFC0006B86F /* OnboardingService.swift */; };
 		01E409872C707F6C0006B86F /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E409862C707F6C0006B86F /* LoginModel.swift */; };
 		01E409892C707FA90006B86F /* RefreshModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E409882C707FA90006B86F /* RefreshModel.swift */; };
 		01E4098C2C709D680006B86F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E4098B2C709D680006B86F /* HomeViewController.swift */; };
 		01E4098E2C70B95F0006B86F /* JoinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E4098D2C70B95F0006B86F /* JoinModel.swift */; };
 		01E409902C70B9C60006B86F /* JoinQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E4098F2C70B9C60006B86F /* JoinQuery.swift */; };
 		01E409922C70BB4B0006B86F /* JoinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E409912C70BB4B0006B86F /* JoinViewModel.swift */; };
+		01E4099A2C70E8DB0006B86F /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E409992C70E8DB0006B86F /* String+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,13 +85,14 @@
 		01E4097E2C6DF1550006B86F /* JoinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinView.swift; sourceTree = "<group>"; };
 		01E409802C7079C30006B86F /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		01E409822C707D620006B86F /* LoginQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginQuery.swift; sourceTree = "<group>"; };
-		01E409842C707EFC0006B86F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		01E409842C707EFC0006B86F /* OnboardingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingService.swift; sourceTree = "<group>"; };
 		01E409862C707F6C0006B86F /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		01E409882C707FA90006B86F /* RefreshModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshModel.swift; sourceTree = "<group>"; };
 		01E4098B2C709D680006B86F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		01E4098D2C70B95F0006B86F /* JoinModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinModel.swift; sourceTree = "<group>"; };
 		01E4098F2C70B9C60006B86F /* JoinQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinQuery.swift; sourceTree = "<group>"; };
 		01E409912C70BB4B0006B86F /* JoinViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewModel.swift; sourceTree = "<group>"; };
+		01E409992C70E8DB0006B86F /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,12 +192,8 @@
 		01E409552C6CE31A0006B86F /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				01E409272C6CD0C60006B86F /* LoginViewController.swift */,
-				01E4097A2C6DEBD10006B86F /* LoginViewModel.swift */,
-				01E409622C6DC4460006B86F /* LoginView.swift */,
-				01E4097C2C6DECE10006B86F /* JoinViewController.swift */,
-				01E409912C70BB4B0006B86F /* JoinViewModel.swift */,
-				01E4097E2C6DF1550006B86F /* JoinView.swift */,
+				01E409972C70E6180006B86F /* Login */,
+				01E409982C70E6240006B86F /* Join */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -216,7 +214,6 @@
 				01E4095B2C6DC0920006B86F /* TargetType.swift */,
 				01E409602C6DC2110006B86F /* UserDefaultsManager.swift */,
 				01E409802C7079C30006B86F /* Router.swift */,
-				01E409842C707EFC0006B86F /* NetworkManager.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -224,10 +221,8 @@
 		01E4095A2C6DC0270006B86F /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				01E409822C707D620006B86F /* LoginQuery.swift */,
-				01E409862C707F6C0006B86F /* LoginModel.swift */,
-				01E4098F2C70B9C60006B86F /* JoinQuery.swift */,
-				01E4098D2C70B95F0006B86F /* JoinModel.swift */,
+				01E409962C70E5E30006B86F /* Service */,
+				01E409932C70E4610006B86F /* DTO */,
 				01E409882C707FA90006B86F /* RefreshModel.swift */,
 			);
 			path = Onboarding;
@@ -238,6 +233,7 @@
 			children = (
 				01E4095E2C6DC1A90006B86F /* UIViewController+.swift */,
 				01E409772C6DD9C90006B86F /* UITextField+.swift */,
+				01E409992C70E8DB0006B86F /* String+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -264,6 +260,61 @@
 				01E4098B2C709D680006B86F /* HomeViewController.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		01E409932C70E4610006B86F /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				01E409952C70E4740006B86F /* Response */,
+				01E409942C70E46F0006B86F /* Request */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		01E409942C70E46F0006B86F /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				01E409822C707D620006B86F /* LoginQuery.swift */,
+				01E4098F2C70B9C60006B86F /* JoinQuery.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		01E409952C70E4740006B86F /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				01E409862C707F6C0006B86F /* LoginModel.swift */,
+				01E4098D2C70B95F0006B86F /* JoinModel.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		01E409962C70E5E30006B86F /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				01E409842C707EFC0006B86F /* OnboardingService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		01E409972C70E6180006B86F /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				01E409272C6CD0C60006B86F /* LoginViewController.swift */,
+				01E4097A2C6DEBD10006B86F /* LoginViewModel.swift */,
+				01E409622C6DC4460006B86F /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		01E409982C70E6240006B86F /* Join */ = {
+			isa = PBXGroup;
+			children = (
+				01E4097C2C6DECE10006B86F /* JoinViewController.swift */,
+				01E409912C70BB4B0006B86F /* JoinViewModel.swift */,
+				01E4097E2C6DF1550006B86F /* JoinView.swift */,
+			);
+			path = Join;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,7 +411,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01E409892C707FA90006B86F /* RefreshModel.swift in Sources */,
-				01E409852C707EFC0006B86F /* NetworkManager.swift in Sources */,
+				01E409852C707EFC0006B86F /* OnboardingService.swift in Sources */,
 				01E4094A2C6CDDE70006B86F /* APIUrl.swift in Sources */,
 				01E409782C6DD9C90006B86F /* UITextField+.swift in Sources */,
 				01E409582C6DBDF80006B86F /* HTTPHeaderField.swift in Sources */,
@@ -369,6 +420,7 @@
 				01E4098C2C709D680006B86F /* HomeViewController.swift in Sources */,
 				01E409902C70B9C60006B86F /* JoinQuery.swift in Sources */,
 				01E409832C707D620006B86F /* LoginQuery.swift in Sources */,
+				01E4099A2C70E8DB0006B86F /* String+.swift in Sources */,
 				01E4097F2C6DF1550006B86F /* JoinView.swift in Sources */,
 				01E409282C6CD0C60006B86F /* LoginViewController.swift in Sources */,
 				01E409612C6DC2110006B86F /* UserDefaultsManager.swift in Sources */,
