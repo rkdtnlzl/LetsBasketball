@@ -33,6 +33,7 @@ final class JoinViewController: BaseViewController {
             nicknameText: joinView.nicknameTextField.rx.text.orEmpty,
             emailText: joinView.emailTextField.rx.text.orEmpty,
             passwordText: joinView.passwordTextField.rx.text.orEmpty,
+            passwordConfirmText: joinView.passwordConfirmTextField.rx.text.orEmpty,
             joinTap: joinView.joinButton.rx.tap
         )
         
@@ -44,6 +45,18 @@ final class JoinViewController: BaseViewController {
         
         output.nicknameValidation
             .bind(to: joinView.nicknameValid.rx.text)
+            .disposed(by: disposeBag)
+        
+        output.emailValidation
+            .bind(to: joinView.emailValid.rx.text)
+            .disposed(by: disposeBag)
+        
+        output.passwordValidation
+            .bind(to: joinView.passwordValid.rx.text)
+            .disposed(by: disposeBag)
+        
+        output.passwordConfirmValidation
+            .bind(to: joinView.passwordConfirmValid.rx.text)
             .disposed(by: disposeBag)
         
         output.joinResult

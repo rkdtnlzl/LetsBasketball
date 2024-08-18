@@ -14,6 +14,7 @@ class JoinViewModel {
         let nicknameText: ControlProperty<String>
         let emailText: ControlProperty<String>
         let passwordText: ControlProperty<String>
+        let passwordConfirmText: ControlProperty<String>
         let joinTap: ControlEvent<Void>
     }
     
@@ -21,6 +22,9 @@ class JoinViewModel {
         let isJoinEnabled: Observable<Bool>
         let joinResult: Observable<Bool>
         let nicknameValidation: Observable<String>
+        let emailValidation: Observable<String>
+        let passwordValidation: Observable<String>
+        let passwordConfirmValidation: Observable<String>
     }
     
     private let disposeBag = DisposeBag()
@@ -38,21 +42,56 @@ class JoinViewModel {
                     return "사용 가능한 닉네임입니다"
                 }
             }
+        
+        let emailValidation = input.emailText
+            .map { email -> String in
+                if email.isEmpty {
+                    return "이메일을 입력해주세요"
+                } else if !email.isValidEmail {
+                    return "올바른 이메일 형식이 아닙니다"
+                } else {
+                    return "사용 가능한 이메일입니다"
+                }
+            }
+        
+        let passwordValidation = input.passwordText
+            .map { password -> String in
+                if password.isEmpty {
+                    return "비밀번호를 입력해주세요"
+                } else if !password.isValidPassword {
+                    return "비밀번호는 6자 이상, 영어와 숫자 조합이어야 합니다"
+                } else {
+                    return "사용 가능한 비밀번호입니다"
+                }
+            }
+        
+        let passwordConfirmValidation = Observable.combineLatest(input.passwordText, input.passwordConfirmText)
+            .map { password, confirmPassword -> String in
+                if confirmPassword.isEmpty {
+                    return "비밀번호 확인을 입력해주세요"
+                } else if password != confirmPassword {
+                    return "비밀번호가 일치하지 않습니다"
+                } else {
+                    return "비밀번호가 일치합니다"
+                }
+            }
+        
         let data = Observable.combineLatest(input.nicknameText,
                                             input.emailText,
-                                            input.passwordText
+                                            input.passwordText,
+                                            input.passwordConfirmText
         )
         
         let isJoinEnabled = data
-            .map { nickname, email, password in
-                return !email.isEmpty && !password.isEmpty && nickname.isValidNickname && nickname.count >= 3 && nickname.count <= 6
+            .map { nickname, email, password, confirmPassword in
+                return email.isValidEmail && password.isValidPassword && nickname.isValidNickname && password == confirmPassword
             }
         
         let joinResult = PublishSubject<Bool>()
         
         input.joinTap
             .withLatestFrom(data)
-            .flatMapLatest { nickname, email, password -> Observable<Bool> in
+            .flatMapLatest { nickname, email, password, _ -> Observable<Bool> in
                 return OnboardingService.join(email: email, password: password, nick: nickname)
                     .catch { _ in
                         return Observable.just(false)
@@ -66,7 +105,10 @@ class JoinViewModel {
         return Output(
             isJoinEnabled: isJoinEnabled,
             joinResult: joinResult.asObservable(),
-            nicknameValidation: nicknameValidation
+            nicknameValidation: nicknameValidation,
+            emailValidation: emailValidation,
+            passwordValidation: passwordValidation,
+            passwordConfirmValidation: passwordConfirmValidation
         )
     }
 }
