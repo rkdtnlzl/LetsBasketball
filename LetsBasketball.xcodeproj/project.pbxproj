@@ -50,6 +50,9 @@
 		01E409902C70B9C60006B86F /* JoinQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E4098F2C70B9C60006B86F /* JoinQuery.swift */; };
 		01E409922C70BB4B0006B86F /* JoinViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E409912C70BB4B0006B86F /* JoinViewModel.swift */; };
 		01E4099A2C70E8DB0006B86F /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E409992C70E8DB0006B86F /* String+.swift */; };
+		01E409A42C73219C0006B86F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E409A32C73219C0006B86F /* HomeView.swift */; };
+		01E409A72C7325010006B86F /* LBSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E409A62C7325010006B86F /* LBSearchView.swift */; };
+		01E409A92C732ED90006B86F /* LBBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E409A82C732ED90006B86F /* LBBoardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +96,9 @@
 		01E4098F2C70B9C60006B86F /* JoinQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinQuery.swift; sourceTree = "<group>"; };
 		01E409912C70BB4B0006B86F /* JoinViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewModel.swift; sourceTree = "<group>"; };
 		01E409992C70E8DB0006B86F /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		01E409A32C73219C0006B86F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		01E409A62C7325010006B86F /* LBSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LBSearchView.swift; sourceTree = "<group>"; };
+		01E409A82C732ED90006B86F /* LBBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LBBoardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +159,7 @@
 		01E4094C2C6CDF8A0006B86F /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				01E409A52C7324F20006B86F /* Util */,
 				01E4095D2C6DC19C0006B86F /* Extension */,
 				01E409562C6CE3DB0006B86F /* Network */,
 				01E4094D2C6CDF970006B86F /* Application */,
@@ -258,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				01E4098B2C709D680006B86F /* HomeViewController.swift */,
+				01E409A32C73219C0006B86F /* HomeView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -315,6 +323,15 @@
 				01E4097E2C6DF1550006B86F /* JoinView.swift */,
 			);
 			path = Join;
+			sourceTree = "<group>";
+		};
+		01E409A52C7324F20006B86F /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				01E409A62C7325010006B86F /* LBSearchView.swift */,
+				01E409A82C732ED90006B86F /* LBBoardView.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -410,10 +427,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01E409A42C73219C0006B86F /* HomeView.swift in Sources */,
 				01E409892C707FA90006B86F /* RefreshModel.swift in Sources */,
 				01E409852C707EFC0006B86F /* OnboardingService.swift in Sources */,
 				01E4094A2C6CDDE70006B86F /* APIUrl.swift in Sources */,
 				01E409782C6DD9C90006B86F /* UITextField+.swift in Sources */,
+				01E409A92C732ED90006B86F /* LBBoardView.swift in Sources */,
 				01E409582C6DBDF80006B86F /* HTTPHeaderField.swift in Sources */,
 				01E4095F2C6DC1A90006B86F /* UIViewController+.swift in Sources */,
 				01E409872C707F6C0006B86F /* LoginModel.swift in Sources */,
@@ -433,6 +452,7 @@
 				01E409242C6CD0C60006B86F /* AppDelegate.swift in Sources */,
 				01E409482C6CDD020006B86F /* APIKey.swift in Sources */,
 				01E409542C6CE3100006B86F /* BaseView.swift in Sources */,
+				01E409A72C7325010006B86F /* LBSearchView.swift in Sources */,
 				01E409262C6CD0C60006B86F /* SceneDelegate.swift in Sources */,
 				01E4097D2C6DECE10006B86F /* JoinViewController.swift in Sources */,
 				01E409512C6CE3050006B86F /* BaseViewController.swift in Sources */,
