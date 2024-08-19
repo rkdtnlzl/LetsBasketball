@@ -1,0 +1,107 @@
+//
+//  HomeView.swift
+//  LetsBasketball
+//
+//  Created by 강석호 on 8/19/24.
+//
+
+import UIKit
+import SnapKit
+
+final class HomeView: BaseView {
+    
+    private let logoLabel = UILabel()
+    private let logoImageView = UIImageView()
+    private let searchBar = LBSearchView()
+    private let boardLabel = UILabel()
+    private let yanongBoard = LBBoardView(title: "야농 게시판",
+                                            description: "야외 농구 모집하기")
+    private let infoBoard = LBBoardView(title: "정보 게시판",
+                                            description: "농구 정보 공유하기")
+    private let recentLabel = UILabel()
+    
+    lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout())
+    
+    func layout() -> UICollectionViewFlowLayout {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.itemSize = CGSize(width: 150, height: 180)
+        layout.minimumLineSpacing = 10
+        layout.minimumInteritemSpacing = 10
+        return layout
+    }
+    
+    override func configureHierarchy() {
+        addSubview(logoLabel)
+        addSubview(logoImageView)
+        addSubview(searchBar)
+        addSubview(boardLabel)
+        addSubview(yanongBoard)
+        addSubview(infoBoard)
+        addSubview(recentLabel)
+        addSubview(collectionView)
+    }
+    
+    override func configureUI() {
+        logoLabel.text = "농구 커뮤니티 야농"
+        logoLabel.font = UIFont(name: "Pretendard-Black", size: 24)
+        logoLabel.textColor = UIColor(named: "BaseColor")
+        
+        logoImageView.image = UIImage(named: "LBLogo2")
+        logoImageView.contentMode = .scaleAspectFit
+        
+        boardLabel.text = "게시판"
+        boardLabel.font = UIFont(name: "Pretendard-Bold", size: 20)
+        boardLabel.textColor = UIColor(named: "BaseColor")
+        
+        recentLabel.text = "최근 본 게시글"
+        recentLabel.font = UIFont(name: "Pretendard-Bold", size: 20)
+        recentLabel.textColor = UIColor(named: "BaseColor")
+        
+        collectionView.backgroundColor = .clear
+        collectionView.register(RecentCollectionViewCell.self, forCellWithReuseIdentifier: RecentCollectionViewCell.id)
+    }
+    
+    override func configureConstraints() {
+        logoLabel.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(80)
+            make.leading.equalToSuperview().inset(20)
+        }
+        logoImageView.snp.makeConstraints { make in
+            make.top.equalToSuperview().inset(77)
+            make.leading.equalTo(logoLabel.snp.trailing).offset(10)
+            make.size.equalTo(35)
+        }
+        searchBar.snp.makeConstraints { make in
+            make.top.equalTo(logoLabel.snp.bottom).offset(70)
+            make.horizontalEdges.equalToSuperview().inset(20)
+            make.height.equalTo(60)
+        }
+        boardLabel.snp.makeConstraints { make in
+            make.top.equalTo(searchBar.snp.bottom).offset(50)
+            make.leading.equalToSuperview().inset(20)
+        }
+        yanongBoard.snp.makeConstraints { make in
+            make.top.equalTo(boardLabel.snp.bottom).offset(15)
+            make.leading.equalToSuperview().inset(20)
+            make.width.equalTo(162)
+            make.height.equalTo(120)
+        }
+        infoBoard.snp.makeConstraints { make in
+            make.top.equalTo(boardLabel.snp.bottom).offset(15)
+            make.trailing.equalToSuperview().inset(20)
+            make.width.equalTo(162)
+            make.height.equalTo(120)
+        }
+        recentLabel.snp.makeConstraints { make in
+            make.top.equalTo(infoBoard.snp.bottom).offset(50)
+            make.leading.equalToSuperview().inset(20)
+        }
+        collectionView.snp.makeConstraints { make in
+            make.top.equalTo(recentLabel.snp.bottom).offset(20)
+            make.leading.equalToSuperview().inset(20)
+            make.trailing.equalToSuperview()
+            make.height.equalTo(180)
+        }
+    }
+}

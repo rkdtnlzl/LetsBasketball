@@ -39,11 +39,9 @@ class LBBoardView: UIView {
         self.layer.borderWidth = 1
         self.layer.borderColor = UIColor(named: "BaseColor")?.cgColor
         
-        titleLabel.text = "야농 게시판"
         titleLabel.textColor = .black
         titleLabel.font = UIFont(name: "Pretendard-Bold", size: 17)
         
-        descriptionLabel.text = "야외 농구 모집하기"
         descriptionLabel.textColor = .gray
         descriptionLabel.font = UIFont(name: "Pretendard-Medium", size: 13)
     }
