@@ -18,8 +18,17 @@ final class HomeView: BaseView {
                                             description: "야외 농구 모집하기")
     private let infoBoard = LBBoardView(title: "정보 게시판",
                                             description: "농구 정보 공유하기")
-    private let recentLabel = UILabel()
     
+    private lazy var boardStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [yanongBoard, infoBoard])
+        stackView.axis = .horizontal
+        stackView.spacing = 10
+        stackView.distribution = .fillEqually
+        return stackView
+    }()
+    
+    private let yanongButton = UIButton()
+    private let recentLabel = UILabel()
     lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout())
     
     func layout() -> UICollectionViewFlowLayout {
@@ -36,10 +45,11 @@ final class HomeView: BaseView {
         addSubview(logoImageView)
         addSubview(searchBar)
         addSubview(boardLabel)
-        addSubview(yanongBoard)
-        addSubview(infoBoard)
+        addSubview(boardStackView)
         addSubview(recentLabel)
         addSubview(collectionView)
+        
+        yanongBoard.addSubview(yanongButton)
     }
     
     override func configureUI() {
@@ -58,7 +68,10 @@ final class HomeView: BaseView {
         recentLabel.font = UIFont(name: "Pretendard-Bold", size: 20)
         recentLabel.textColor = UIColor(named: "BaseColor")
         
+        yanongButton.backgroundColor = .clear
+        
         collectionView.backgroundColor = .clear
+        collectionView.showsHorizontalScrollIndicator = false
         collectionView.register(RecentCollectionViewCell.self, forCellWithReuseIdentifier: RecentCollectionViewCell.id)
     }
     
@@ -73,7 +86,7 @@ final class HomeView: BaseView {
             make.size.equalTo(35)
         }
         searchBar.snp.makeConstraints { make in
-            make.top.equalTo(logoLabel.snp.bottom).offset(70)
+            make.top.equalTo(logoLabel.snp.bottom).offset(60)
             make.horizontalEdges.equalToSuperview().inset(20)
             make.height.equalTo(60)
         }
@@ -81,17 +94,13 @@ final class HomeView: BaseView {
             make.top.equalTo(searchBar.snp.bottom).offset(50)
             make.leading.equalToSuperview().inset(20)
         }
-        yanongBoard.snp.makeConstraints { make in
+        boardStackView.snp.makeConstraints { make in
             make.top.equalTo(boardLabel.snp.bottom).offset(15)
-            make.leading.equalToSuperview().inset(20)
-            make.width.equalTo(162)
+            make.horizontalEdges.equalToSuperview().inset(20)
             make.height.equalTo(120)
         }
-        infoBoard.snp.makeConstraints { make in
-            make.top.equalTo(boardLabel.snp.bottom).offset(15)
-            make.trailing.equalToSuperview().inset(20)
-            make.width.equalTo(162)
-            make.height.equalTo(120)
+        yanongButton.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
         }
         recentLabel.snp.makeConstraints { make in
             make.top.equalTo(infoBoard.snp.bottom).offset(50)
