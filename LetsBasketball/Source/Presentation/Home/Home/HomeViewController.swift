@@ -13,6 +13,7 @@ final class HomeViewController: BaseViewController {
     }
     
     let homeView = HomeView()
+    private let viewModel = HomeViewModel()
     private var dataSource: UICollectionViewDiffableDataSource<Int, Int>!
     
     override func loadView() {
@@ -24,6 +25,22 @@ final class HomeViewController: BaseViewController {
         
         configureDataSource()
         applySnapshot()
+        bind()
+    }
+    
+    func bind() {
+        let input = HomeViewModel.Input(
+            yanongTapped: homeView.yanongButton.rx.tap
+        )
+        
+        let output = viewModel.transform(input: input)
+        
+        output.navigateToYanong
+            .bind(with: self, onNext: { owner, _ in
+                let vc = YanongViewController()
+                owner.navigationController?.pushViewController(vc, animated: true)
+            })
+            .disposed(by: disposeBag)
     }
     
     private func configureDataSource() {

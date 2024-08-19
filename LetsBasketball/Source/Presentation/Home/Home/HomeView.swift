@@ -27,7 +27,7 @@ final class HomeView: BaseView {
         return stackView
     }()
     
-    private let yanongButton = UIButton()
+    let yanongButton = UIButton()
     private let recentLabel = UILabel()
     lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout())
     
