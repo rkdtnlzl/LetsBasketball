@@ -88,7 +88,7 @@ final class HomeView: BaseView {
         searchBar.snp.makeConstraints { make in
             make.top.equalTo(logoLabel.snp.bottom).offset(60)
             make.horizontalEdges.equalToSuperview().inset(20)
-            make.height.equalTo(60)
+            make.height.equalTo(55)
         }
         boardLabel.snp.makeConstraints { make in
             make.top.equalTo(searchBar.snp.bottom).offset(50)
