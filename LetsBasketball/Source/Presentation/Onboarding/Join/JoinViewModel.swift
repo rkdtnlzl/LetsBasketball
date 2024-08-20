@@ -92,7 +92,7 @@ class JoinViewModel {
         input.joinTap
             .withLatestFrom(data)
             .flatMapLatest { nickname, email, password, _ -> Observable<Bool> in
-                return OnboardingService.join(email: email, password: password, nick: nickname)
+                return NetworkManager.shared.join(email: email, password: password, nick: nickname)
                     .catch { _ in
                         return Observable.just(false)
                     }

@@ -1,21 +1,21 @@
 //
-//  OnboardingService.swift
+//  NetworkManager.swift
 //  LetsBasketball
 //
-//  Created by 강석호 on 8/17/24.
+//  Created by 강석호 on 8/20/24.
 //
 
 import Foundation
 import Alamofire
 import RxSwift
 
-final class OnboardingService {
+final class NetworkManager {
     
-    static let shared = OnboardingService()
+    static let shared = NetworkManager()
     
     private init() { }
     
-    static func login(email: String, password: String) -> Observable<Bool> {
+    func login(email: String, password: String) -> Observable<Bool> {
         return Observable.create { observer in
             do {
                 let query = LoginQuery(email: email, password: password)
@@ -45,7 +45,7 @@ final class OnboardingService {
         }
     }
     
-    static func join(email: String, password: String, nick: String) -> Observable<Bool> {
+    func join(email: String, password: String, nick: String) -> Observable<Bool> {
         return Observable.create { observer in
             do {
                 let query = JoinQuery(email: email, password: password, nick: nick)

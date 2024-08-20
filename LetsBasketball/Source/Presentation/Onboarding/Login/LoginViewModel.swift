@@ -37,7 +37,7 @@ class LoginViewModel {
         input.loginTap
             .withLatestFrom(data)
             .flatMapLatest { email, password -> Observable<Bool> in
-                return OnboardingService.login(email: email, password: password)
+                return NetworkManager.shared.login(email: email, password: password)
                     .catch { _ in
                         return Observable.just(false)
                     }

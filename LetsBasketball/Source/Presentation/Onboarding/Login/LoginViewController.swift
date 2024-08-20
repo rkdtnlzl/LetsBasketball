@@ -43,7 +43,7 @@ class LoginViewController: BaseViewController {
         output.loginResult
             .bind(with: self, onNext: { owner, success in
                 if success {
-                    owner.setRootViewController(HomeViewController())
+                    owner.setRootViewController(TabBarController())
                 } else {
                     print("로그인 실패")
                     owner.showAlert(title: "로그인을 실패하였습니다")
