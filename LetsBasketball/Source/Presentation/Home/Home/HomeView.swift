@@ -29,6 +29,7 @@ final class HomeView: BaseView {
     
     let yanongButton = UIButton()
     private let recentLabel = UILabel()
+    let recentMoreButton = UIButton()
     lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout())
     
     func layout() -> UICollectionViewFlowLayout {
@@ -47,6 +48,7 @@ final class HomeView: BaseView {
         addSubview(boardLabel)
         addSubview(boardStackView)
         addSubview(recentLabel)
+        addSubview(recentMoreButton)
         addSubview(collectionView)
         
         yanongBoard.addSubview(yanongButton)
@@ -70,6 +72,9 @@ final class HomeView: BaseView {
         
         yanongButton.backgroundColor = .clear
         
+        recentMoreButton.setImage(UIImage(systemName: "plus"), for: .normal)
+        recentMoreButton.tintColor = UIColor(named: "BaseColor")
+        
         collectionView.backgroundColor = .clear
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.register(RecentCollectionViewCell.self, forCellWithReuseIdentifier: RecentCollectionViewCell.id)
@@ -91,7 +96,7 @@ final class HomeView: BaseView {
             make.height.equalTo(55)
         }
         boardLabel.snp.makeConstraints { make in
-            make.top.equalTo(searchBar.snp.bottom).offset(50)
+            make.top.equalTo(searchBar.snp.bottom).offset(40)
             make.leading.equalToSuperview().inset(20)
         }
         boardStackView.snp.makeConstraints { make in
@@ -103,8 +108,13 @@ final class HomeView: BaseView {
             make.edges.equalToSuperview()
         }
         recentLabel.snp.makeConstraints { make in
-            make.top.equalTo(infoBoard.snp.bottom).offset(50)
+            make.top.equalTo(infoBoard.snp.bottom).offset(40)
             make.leading.equalToSuperview().inset(20)
+        }
+        recentMoreButton.snp.makeConstraints { make in
+            make.top.equalTo(infoBoard.snp.bottom).offset(40)
+            make.trailing.equalToSuperview().inset(20)
+            make.size.equalTo(20)
         }
         collectionView.snp.makeConstraints { make in
             make.top.equalTo(recentLabel.snp.bottom).offset(20)
