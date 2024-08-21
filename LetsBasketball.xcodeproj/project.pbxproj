@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		01D112542C747554006B20BB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D112532C747554006B20BB /* NetworkManager.swift */; };
+		01D112702C760A5E006B20BB /* YanongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D1126F2C760A5E006B20BB /* YanongView.swift */; };
+		01D112732C7610A5006B20BB /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = 01D112722C7610A5006B20BB /* Tabman */; };
 		01E409242C6CD0C60006B86F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E409232C6CD0C60006B86F /* AppDelegate.swift */; };
 		01E409262C6CD0C60006B86F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E409252C6CD0C60006B86F /* SceneDelegate.swift */; };
 		01E409282C6CD0C60006B86F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E409272C6CD0C60006B86F /* LoginViewController.swift */; };
@@ -65,6 +67,7 @@
 
 /* Begin PBXFileReference section */
 		01D112532C747554006B20BB /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		01D1126F2C760A5E006B20BB /* YanongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YanongView.swift; sourceTree = "<group>"; };
 		01E409202C6CD0C60006B86F /* LetsBasketball.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LetsBasketball.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01E409232C6CD0C60006B86F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01E409252C6CD0C60006B86F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +130,7 @@
 				01E409432C6CD6EC0006B86F /* RxSwift in Frameworks */,
 				01E4093B2C6CD6CC0006B86F /* Alamofire in Frameworks */,
 				01E409462C6CD6F90006B86F /* SnapKit in Frameworks */,
+				01D112732C7610A5006B20BB /* Tabman in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,6 +371,7 @@
 			isa = PBXGroup;
 			children = (
 				01E409BC2C736E9B0006B86F /* YanongViewController.swift */,
+				01D1126F2C760A5E006B20BB /* YanongView.swift */,
 			);
 			path = Yanong;
 			sourceTree = "<group>";
@@ -404,6 +409,7 @@
 				01E409402C6CD6EC0006B86F /* RxCocoa */,
 				01E409422C6CD6EC0006B86F /* RxSwift */,
 				01E409452C6CD6F90006B86F /* SnapKit */,
+				01D112722C7610A5006B20BB /* Tabman */,
 			);
 			productName = LetsBasketball;
 			productReference = 01E409202C6CD0C60006B86F /* LetsBasketball.app */;
@@ -438,6 +444,7 @@
 				01E4093C2C6CD6D60006B86F /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				01E4093F2C6CD6EC0006B86F /* XCRemoteSwiftPackageReference "RxSwift" */,
 				01E409442C6CD6F90006B86F /* XCRemoteSwiftPackageReference "SnapKit" */,
+				01D112712C7610A5006B20BB /* XCRemoteSwiftPackageReference "Tabman" */,
 			);
 			productRefGroup = 01E409212C6CD0C60006B86F /* Products */;
 			projectDirPath = "";
@@ -507,6 +514,7 @@
 				01E409AD2C7344D20006B86F /* BaseCollectionViewCell.swift in Sources */,
 				01E409542C6CE3100006B86F /* BaseView.swift in Sources */,
 				01E409A72C7325010006B86F /* LBSearchView.swift in Sources */,
+				01D112702C760A5E006B20BB /* YanongView.swift in Sources */,
 				01E409262C6CD0C60006B86F /* SceneDelegate.swift in Sources */,
 				01E409AB2C73449D0006B86F /* RecentCollectionViewCell.swift in Sources */,
 				01E4097D2C6DECE10006B86F /* JoinViewController.swift in Sources */,
@@ -736,6 +744,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		01D112712C7610A5006B20BB /* XCRemoteSwiftPackageReference "Tabman" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/uias/Tabman.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.2.0;
+			};
+		};
 		01E409392C6CD6CC0006B86F /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -771,6 +787,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		01D112722C7610A5006B20BB /* Tabman */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 01D112712C7610A5006B20BB /* XCRemoteSwiftPackageReference "Tabman" */;
+			productName = Tabman;
+		};
 		01E4093A2C6CD6CC0006B86F /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 01E409392C6CD6CC0006B86F /* XCRemoteSwiftPackageReference "Alamofire" */;
