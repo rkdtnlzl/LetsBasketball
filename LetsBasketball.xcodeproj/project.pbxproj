@@ -8,8 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		01D112542C747554006B20BB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D112532C747554006B20BB /* NetworkManager.swift */; };
-		01D112702C760A5E006B20BB /* YanongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D1126F2C760A5E006B20BB /* YanongView.swift */; };
 		01D112732C7610A5006B20BB /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = 01D112722C7610A5006B20BB /* Tabman */; };
+		01D1127C2C771D2C006B20BB /* LBRequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D1127B2C771D2C006B20BB /* LBRequestInterceptor.swift */; };
+		01D1127E2C776CCA006B20BB /* AllYanongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D1127D2C776CCA006B20BB /* AllYanongViewController.swift */; };
+		01D112802C776E4F006B20BB /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D1127F2C776E4F006B20BB /* BaseTableViewCell.swift */; };
+		01D112822C776EEC006B20BB /* YanongTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D112812C776EEC006B20BB /* YanongTableViewCell.swift */; };
 		01E409242C6CD0C60006B86F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E409232C6CD0C60006B86F /* AppDelegate.swift */; };
 		01E409262C6CD0C60006B86F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E409252C6CD0C60006B86F /* SceneDelegate.swift */; };
 		01E409282C6CD0C60006B86F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E409272C6CD0C60006B86F /* LoginViewController.swift */; };
@@ -67,7 +70,10 @@
 
 /* Begin PBXFileReference section */
 		01D112532C747554006B20BB /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		01D1126F2C760A5E006B20BB /* YanongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YanongView.swift; sourceTree = "<group>"; };
+		01D1127B2C771D2C006B20BB /* LBRequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LBRequestInterceptor.swift; sourceTree = "<group>"; };
+		01D1127D2C776CCA006B20BB /* AllYanongViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllYanongViewController.swift; sourceTree = "<group>"; };
+		01D1127F2C776E4F006B20BB /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		01D112812C776EEC006B20BB /* YanongTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YanongTableViewCell.swift; sourceTree = "<group>"; };
 		01E409202C6CD0C60006B86F /* LetsBasketball.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LetsBasketball.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01E409232C6CD0C60006B86F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01E409252C6CD0C60006B86F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -216,6 +222,7 @@
 				01E409502C6CE3050006B86F /* BaseViewController.swift */,
 				01E409532C6CE3100006B86F /* BaseView.swift */,
 				01E409AC2C7344D20006B86F /* BaseCollectionViewCell.swift */,
+				01D1127F2C776E4F006B20BB /* BaseTableViewCell.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -245,6 +252,7 @@
 				01E4095B2C6DC0920006B86F /* TargetType.swift */,
 				01E409602C6DC2110006B86F /* UserDefaultsManager.swift */,
 				01D112532C747554006B20BB /* NetworkManager.swift */,
+				01D1127B2C771D2C006B20BB /* LBRequestInterceptor.swift */,
 				01E409802C7079C30006B86F /* Router.swift */,
 			);
 			path = Base;
@@ -371,7 +379,8 @@
 			isa = PBXGroup;
 			children = (
 				01E409BC2C736E9B0006B86F /* YanongViewController.swift */,
-				01D1126F2C760A5E006B20BB /* YanongView.swift */,
+				01D1127D2C776CCA006B20BB /* AllYanongViewController.swift */,
+				01D112812C776EEC006B20BB /* YanongTableViewCell.swift */,
 			);
 			path = Yanong;
 			sourceTree = "<group>";
@@ -490,17 +499,20 @@
 				01E409782C6DD9C90006B86F /* UITextField+.swift in Sources */,
 				01E409A92C732ED90006B86F /* LBBoardView.swift in Sources */,
 				01E409582C6DBDF80006B86F /* HTTPHeaderField.swift in Sources */,
+				01D112802C776E4F006B20BB /* BaseTableViewCell.swift in Sources */,
 				01E4095F2C6DC1A90006B86F /* UIViewController+.swift in Sources */,
 				01E409872C707F6C0006B86F /* LoginModel.swift in Sources */,
 				01E4098C2C709D680006B86F /* HomeViewController.swift in Sources */,
 				01E409902C70B9C60006B86F /* JoinQuery.swift in Sources */,
 				01E409832C707D620006B86F /* LoginQuery.swift in Sources */,
 				01E4099A2C70E8DB0006B86F /* String+.swift in Sources */,
+				01D112822C776EEC006B20BB /* YanongTableViewCell.swift in Sources */,
 				01E4097F2C6DF1550006B86F /* JoinView.swift in Sources */,
 				01E409282C6CD0C60006B86F /* LoginViewController.swift in Sources */,
 				01E409BD2C736E9B0006B86F /* YanongViewController.swift in Sources */,
 				01E409612C6DC2110006B86F /* UserDefaultsManager.swift in Sources */,
 				01E4097B2C6DEBD10006B86F /* LoginViewModel.swift in Sources */,
+				01D1127C2C771D2C006B20BB /* LBRequestInterceptor.swift in Sources */,
 				01E409922C70BB4B0006B86F /* JoinViewModel.swift in Sources */,
 				01E409BA2C736ADF0006B86F /* HomeViewModel.swift in Sources */,
 				01E4095C2C6DC0920006B86F /* TargetType.swift in Sources */,
@@ -513,8 +525,8 @@
 				01E409482C6CDD020006B86F /* APIKey.swift in Sources */,
 				01E409AD2C7344D20006B86F /* BaseCollectionViewCell.swift in Sources */,
 				01E409542C6CE3100006B86F /* BaseView.swift in Sources */,
+				01D1127E2C776CCA006B20BB /* AllYanongViewController.swift in Sources */,
 				01E409A72C7325010006B86F /* LBSearchView.swift in Sources */,
-				01D112702C760A5E006B20BB /* YanongView.swift in Sources */,
 				01E409262C6CD0C60006B86F /* SceneDelegate.swift in Sources */,
 				01E409AB2C73449D0006B86F /* RecentCollectionViewCell.swift in Sources */,
 				01E4097D2C6DECE10006B86F /* JoinViewController.swift in Sources */,
