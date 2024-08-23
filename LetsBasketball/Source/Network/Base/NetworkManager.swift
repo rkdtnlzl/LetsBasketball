@@ -13,8 +13,13 @@ final class NetworkManager {
     
     static let shared = NetworkManager()
     
-    private init() { }
+    private let session: Session
     
+    private init() {
+        session = Session(interceptor: LBRequestInterceptor())
+    }
+    
+    // MARK: 로그인
     func login(email: String, password: String) -> Observable<Bool> {
         return Observable.create { observer in
             do {
@@ -45,6 +50,7 @@ final class NetworkManager {
         }
     }
     
+    // MARK: 회원가입
     func join(email: String, password: String, nick: String) -> Observable<Bool> {
         return Observable.create { observer in
             do {
@@ -63,6 +69,56 @@ final class NetworkManager {
                             print(failure)
                             observer.onNext(false)
                             observer.onCompleted()
+                        }
+                    }
+            } catch {
+                observer.onError(error)
+            }
+            return Disposables.create()
+        }
+    }
+    
+    // MARK: 토큰 재발급
+    func postRefreshToken() -> Observable<Result<RefreshModel, Error>> {
+        return Observable.create { observer in
+            do {
+                let request = try Router.refresh.asURLRequest()
+                self.session.request(request)
+                    .responseDecodable(of: RefreshModel.self) { response in
+                        switch response.result {
+                        case .success(let success):
+                            UserDefaultsManager.shared.token = success.accessToken
+                            observer.onNext(.success(success))
+                            observer.onCompleted()
+                        case .failure(let error):
+                            observer.onNext(.failure(error))
+                            observer.onCompleted()
+                        }
+                    }
+            } catch {
+                observer.onError(error)
+            }
+            return Disposables.create()
+        }
+    }
+    
+    // MARK: 전체 포스트 불러오기
+    func fetchAllPost() -> Observable<AllGetPostModel> {
+        return Observable.create { observer in
+            do {
+                let request = try Router.allGetPost(product_id: "전체").asURLRequest()
+                
+                self.session.request(request)
+                    .responseDecodable(of: AllGetPostModel.self) { response in
+                        switch response.result {
+                        case .success(let success):
+                            print(success)
+                            observer.onNext(success)
+                            observer.onCompleted()
+                            
+                        case .failure(let failure):
+                            print(failure)
+                            observer.onError(failure)
                         }
                     }
             } catch {
