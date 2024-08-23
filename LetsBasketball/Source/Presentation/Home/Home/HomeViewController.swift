@@ -37,7 +37,7 @@ final class HomeViewController: BaseViewController {
         
         output.navigateToYanong
             .bind(with: self, onNext: { owner, _ in
-                let vc = YanongViewController()
+                let vc = LBTabManViewController()
                 owner.navigationController?.pushViewController(vc, animated: true)
             })
             .disposed(by: disposeBag)
