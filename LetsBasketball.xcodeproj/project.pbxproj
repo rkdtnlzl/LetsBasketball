@@ -13,6 +13,8 @@
 		01D1127E2C776CCA006B20BB /* AllYanongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D1127D2C776CCA006B20BB /* AllYanongViewController.swift */; };
 		01D112802C776E4F006B20BB /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D1127F2C776E4F006B20BB /* BaseTableViewCell.swift */; };
 		01D112822C776EEC006B20BB /* YanongTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D112812C776EEC006B20BB /* YanongTableViewCell.swift */; };
+		01D112862C78A8A5006B20BB /* AllGetPostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D112852C78A8A5006B20BB /* AllGetPostModel.swift */; };
+		01D112882C78AFC8006B20BB /* AllYanongViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D112872C78AFC8006B20BB /* AllYanongViewModel.swift */; };
 		01E409242C6CD0C60006B86F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E409232C6CD0C60006B86F /* AppDelegate.swift */; };
 		01E409262C6CD0C60006B86F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E409252C6CD0C60006B86F /* SceneDelegate.swift */; };
 		01E409282C6CD0C60006B86F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E409272C6CD0C60006B86F /* LoginViewController.swift */; };
@@ -65,7 +67,7 @@
 		01E409B62C735C280006B86F /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E409B52C735C280006B86F /* ProfileViewController.swift */; };
 		01E409B82C7360C50006B86F /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E409B72C7360C50006B86F /* UIColor+.swift */; };
 		01E409BA2C736ADF0006B86F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E409B92C736ADF0006B86F /* HomeViewModel.swift */; };
-		01E409BD2C736E9B0006B86F /* YanongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E409BC2C736E9B0006B86F /* YanongViewController.swift */; };
+		01E409BD2C736E9B0006B86F /* LBTabManViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E409BC2C736E9B0006B86F /* LBTabManViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +76,8 @@
 		01D1127D2C776CCA006B20BB /* AllYanongViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllYanongViewController.swift; sourceTree = "<group>"; };
 		01D1127F2C776E4F006B20BB /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		01D112812C776EEC006B20BB /* YanongTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YanongTableViewCell.swift; sourceTree = "<group>"; };
+		01D112852C78A8A5006B20BB /* AllGetPostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGetPostModel.swift; sourceTree = "<group>"; };
+		01D112872C78AFC8006B20BB /* AllYanongViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllYanongViewModel.swift; sourceTree = "<group>"; };
 		01E409202C6CD0C60006B86F /* LetsBasketball.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LetsBasketball.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01E409232C6CD0C60006B86F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01E409252C6CD0C60006B86F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,7 +127,7 @@
 		01E409B52C735C280006B86F /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		01E409B72C7360C50006B86F /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		01E409B92C736ADF0006B86F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		01E409BC2C736E9B0006B86F /* YanongViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YanongViewController.swift; sourceTree = "<group>"; };
+		01E409BC2C736E9B0006B86F /* LBTabManViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LBTabManViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +147,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01D112832C78A81E006B20BB /* GetPost */ = {
+			isa = PBXGroup;
+			children = (
+				01D112852C78A8A5006B20BB /* AllGetPostModel.swift */,
+			);
+			path = GetPost;
+			sourceTree = "<group>";
+		};
+		01D112842C78A850006B20BB /* Refresh */ = {
+			isa = PBXGroup;
+			children = (
+				01E409882C707FA90006B86F /* RefreshModel.swift */,
+			);
+			path = Refresh;
+			sourceTree = "<group>";
+		};
 		01E409172C6CD0C60006B86F = {
 			isa = PBXGroup;
 			children = (
@@ -239,6 +259,8 @@
 		01E409562C6CE3DB0006B86F /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				01D112842C78A850006B20BB /* Refresh */,
+				01D112832C78A81E006B20BB /* GetPost */,
 				01E4095A2C6DC0270006B86F /* Onboarding */,
 				01E409592C6DC01C0006B86F /* Base */,
 			);
@@ -263,7 +285,6 @@
 			children = (
 				01E409952C70E4740006B86F /* ResponseDTO */,
 				01E409942C70E46F0006B86F /* RequestDTO */,
-				01E409882C707FA90006B86F /* RefreshModel.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -378,8 +399,9 @@
 		01E409BB2C736E8F0006B86F /* Yanong */ = {
 			isa = PBXGroup;
 			children = (
-				01E409BC2C736E9B0006B86F /* YanongViewController.swift */,
+				01E409BC2C736E9B0006B86F /* LBTabManViewController.swift */,
 				01D1127D2C776CCA006B20BB /* AllYanongViewController.swift */,
+				01D112872C78AFC8006B20BB /* AllYanongViewModel.swift */,
 				01D112812C776EEC006B20BB /* YanongTableViewCell.swift */,
 			);
 			path = Yanong;
@@ -491,6 +513,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01D112862C78A8A5006B20BB /* AllGetPostModel.swift in Sources */,
 				01D112542C747554006B20BB /* NetworkManager.swift in Sources */,
 				01E409B02C735B5A0006B86F /* TabBarViewController.swift in Sources */,
 				01E409A42C73219C0006B86F /* HomeView.swift in Sources */,
@@ -509,7 +532,7 @@
 				01D112822C776EEC006B20BB /* YanongTableViewCell.swift in Sources */,
 				01E4097F2C6DF1550006B86F /* JoinView.swift in Sources */,
 				01E409282C6CD0C60006B86F /* LoginViewController.swift in Sources */,
-				01E409BD2C736E9B0006B86F /* YanongViewController.swift in Sources */,
+				01E409BD2C736E9B0006B86F /* LBTabManViewController.swift in Sources */,
 				01E409612C6DC2110006B86F /* UserDefaultsManager.swift in Sources */,
 				01E4097B2C6DEBD10006B86F /* LoginViewModel.swift in Sources */,
 				01D1127C2C771D2C006B20BB /* LBRequestInterceptor.swift in Sources */,
@@ -523,6 +546,7 @@
 				01E409B62C735C280006B86F /* ProfileViewController.swift in Sources */,
 				01E409242C6CD0C60006B86F /* AppDelegate.swift in Sources */,
 				01E409482C6CDD020006B86F /* APIKey.swift in Sources */,
+				01D112882C78AFC8006B20BB /* AllYanongViewModel.swift in Sources */,
 				01E409AD2C7344D20006B86F /* BaseCollectionViewCell.swift in Sources */,
 				01E409542C6CE3100006B86F /* BaseView.swift in Sources */,
 				01D1127E2C776CCA006B20BB /* AllYanongViewController.swift in Sources */,
