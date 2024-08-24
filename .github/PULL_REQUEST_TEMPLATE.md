@@ -1,13 +1,6 @@
----
-name: 우리만의 이슈 템플릿
-about: 작고 소중한 이슈 템플릿
-title: ''
-labels: bug
-assignees: GREENOVER
+## 📝작업 내용
 
----
+### OOO 기능 구현
 
-## 🚀 Description
 
-## ✅ TODO
-- [ ]
+### 스크린샷(선택)
