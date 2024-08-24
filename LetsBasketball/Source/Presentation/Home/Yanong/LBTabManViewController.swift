@@ -21,18 +21,14 @@ final class LBTabManViewController: BaseViewController, PageboyViewControllerDat
     
     let categories = ["전체", "영등포구", "마포구", "용산구", "동작구"]
     
-    private let viewControllers: [UIViewController] = {
-        let firstVC = AllYanongViewController()
-        let secondVC = UIViewController()
-        secondVC.view.backgroundColor = .green
-        let thirdVC = UIViewController()
-        thirdVC.view.backgroundColor = .blue
-        return [firstVC, secondVC, thirdVC]
+    private lazy var viewControllers: [UIViewController] = {
+        return categories.map { RegionViewController(region: $0) }
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationItem.title = "야농게시판"
+        
         tabManVC.dataSource = self
 
         let bar = TMBar.ButtonBar()
