@@ -16,6 +16,7 @@
 		01D1128C2C79A90E006B20BB /* YanongListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D1128B2C79A90E006B20BB /* YanongListViewController.swift */; };
 		01D1128F2C79AEEA006B20BB /* YanongListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D1128E2C79AEEA006B20BB /* YanongListViewModel.swift */; };
 		01D112912C79C559006B20BB /* PostYanongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D112902C79C559006B20BB /* PostYanongViewController.swift */; };
+		01D112952C79D4C7006B20BB /* PostYanongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D112942C79D4C7006B20BB /* PostYanongView.swift */; };
 		01E409242C6CD0C60006B86F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E409232C6CD0C60006B86F /* AppDelegate.swift */; };
 		01E409262C6CD0C60006B86F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E409252C6CD0C60006B86F /* SceneDelegate.swift */; };
 		01E409282C6CD0C60006B86F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E409272C6CD0C60006B86F /* LoginViewController.swift */; };
@@ -80,6 +81,7 @@
 		01D1128B2C79A90E006B20BB /* YanongListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YanongListViewController.swift; sourceTree = "<group>"; };
 		01D1128E2C79AEEA006B20BB /* YanongListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YanongListViewModel.swift; sourceTree = "<group>"; };
 		01D112902C79C559006B20BB /* PostYanongViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostYanongViewController.swift; sourceTree = "<group>"; };
+		01D112942C79D4C7006B20BB /* PostYanongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostYanongView.swift; sourceTree = "<group>"; };
 		01E409202C6CD0C60006B86F /* LetsBasketball.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LetsBasketball.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01E409232C6CD0C60006B86F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01E409252C6CD0C60006B86F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -168,8 +170,8 @@
 		01D112922C79D428006B20BB /* YanongList */ = {
 			isa = PBXGroup;
 			children = (
-				01D112812C776EEC006B20BB /* YanongListTableViewCell.swift */,
 				01D1128B2C79A90E006B20BB /* YanongListViewController.swift */,
+				01D112812C776EEC006B20BB /* YanongListTableViewCell.swift */,
 				01D1128E2C79AEEA006B20BB /* YanongListViewModel.swift */,
 			);
 			path = YanongList;
@@ -179,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				01D112902C79C559006B20BB /* PostYanongViewController.swift */,
+				01D112942C79D4C7006B20BB /* PostYanongView.swift */,
 			);
 			path = PostYanong;
 			sourceTree = "<group>";
@@ -535,6 +538,7 @@
 				01D1128F2C79AEEA006B20BB /* YanongListViewModel.swift in Sources */,
 				01D1128C2C79A90E006B20BB /* YanongListViewController.swift in Sources */,
 				01D112862C78A8A5006B20BB /* AllGetPostModel.swift in Sources */,
+				01D112952C79D4C7006B20BB /* PostYanongView.swift in Sources */,
 				01D112542C747554006B20BB /* NetworkManager.swift in Sources */,
 				01E409B02C735B5A0006B86F /* TabBarViewController.swift in Sources */,
 				01E409A42C73219C0006B86F /* HomeView.swift in Sources */,
