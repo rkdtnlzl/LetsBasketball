@@ -11,6 +11,8 @@ import Alamofire
 enum Router {
     case login(query: LoginQuery)
     case join(query: JoinQuery)
+    case refresh
+    case allGetPost(product_id: String)
 }
 
 extension Router: TargetType {
@@ -20,6 +22,10 @@ extension Router: TargetType {
             return .post
         case .join:
             return .post
+        case .refresh:
+            return .get
+        case .allGetPost:
+            return .get
         }
     }
     
@@ -28,7 +34,12 @@ extension Router: TargetType {
     }
     
     var queryItems: [URLQueryItem]? {
-        return nil
+        switch self {
+        case .allGetPost(let product_id):
+            return [URLQueryItem(name: "product_id", value: product_id)]
+        default:
+            return nil
+        }
     }
     
     var body: Data? {
@@ -39,6 +50,8 @@ extension Router: TargetType {
         case .join(let query):
             let encoder = JSONEncoder()
             return try? encoder.encode(query)
+        default:
+            return nil
         }
     }
     
@@ -52,6 +65,10 @@ extension Router: TargetType {
             return "/users/login"
         case .join:
             return "/users/join"
+        case .refresh:
+            return "/auth/refresh"
+        case .allGetPost:
+            return "/posts"
         }
     }
     
@@ -65,6 +82,20 @@ extension Router: TargetType {
         case .join:
             return [
                 Header.contentType.rawValue: Header.json.rawValue,
+                Header.sesacKey.rawValue: APIKey.key
+            ]
+        case .refresh:
+            return [
+                Header.authorization.rawValue: UserDefaultsManager.shared.token,
+                Header.contentType.rawValue: Header.json.rawValue,
+                Header.refresh.rawValue: UserDefaultsManager.shared.refreshToken,
+                Header.sesacKey.rawValue: APIKey.key
+            ]
+        case .allGetPost:
+            return [
+                Header.authorization.rawValue: UserDefaultsManager.shared.token,
+                Header.contentType.rawValue: Header.json.rawValue,
+                Header.refresh.rawValue: UserDefaultsManager.shared.refreshToken,
                 Header.sesacKey.rawValue: APIKey.key
             ]
         }
