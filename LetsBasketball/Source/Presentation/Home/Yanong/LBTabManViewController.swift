@@ -22,7 +22,7 @@ final class LBTabManViewController: BaseViewController {
     let categories = ["전체", "영등포구", "마포구", "용산구", "동작구"]
     
     private lazy var viewControllers: [UIViewController] = {
-        return categories.map { RegionViewController(region: $0) }
+        return categories.map { YanongListViewController(region: $0) }
     }()
     
     let postButton = UIButton()

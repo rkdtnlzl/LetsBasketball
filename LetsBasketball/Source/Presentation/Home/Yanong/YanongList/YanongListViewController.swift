@@ -1,5 +1,5 @@
 //
-//  RegionViewController.swift
+//  YanongListViewController.swift
 //  LetsBasketball
 //
 //  Created by 강석호 on 8/24/24.
@@ -8,13 +8,13 @@
 import UIKit
 import RxSwift
 
-final class RegionViewController: BaseViewController {
+final class YanongListViewController: BaseViewController {
     
     let tableView = UITableView()
-    private let viewModel: RegionViewModel
+    private let viewModel: YanongListViewModel
 
     init(region: String) {
-        self.viewModel = RegionViewModel(region: region)
+        self.viewModel = YanongListViewModel(region: region)
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -38,16 +38,16 @@ final class RegionViewController: BaseViewController {
     }
     
     override func configureView() {
-        tableView.register(YanongTableViewCell.self, forCellReuseIdentifier: YanongTableViewCell.id)
+        tableView.register(YanongListTableViewCell.self, forCellReuseIdentifier: YanongListTableViewCell.id)
         tableView.rowHeight = 120
     }
     
     private func bind() {
-        let input = RegionViewModel.Input(fetchTrigger: Observable.just(()))
+        let input = YanongListViewModel.Input(fetchTrigger: Observable.just(()))
         let output = viewModel.transform(input: input)
         
         output.items
-            .bind(to: tableView.rx.items(cellIdentifier: YanongTableViewCell.id, cellType: YanongTableViewCell.self)) { index, model, cell in
+            .bind(to: tableView.rx.items(cellIdentifier: YanongListTableViewCell.id, cellType: YanongListTableViewCell.self)) { index, model, cell in
                 cell.configure(with: model)
             }
             .disposed(by: disposeBag)

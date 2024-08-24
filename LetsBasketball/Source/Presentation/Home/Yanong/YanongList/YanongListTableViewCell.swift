@@ -1,5 +1,5 @@
 //
-//  YanongTableViewCell.swift
+//  YanongListTableViewCell.swift
 //  LetsBasketball
 //
 //  Created by 강석호 on 8/22/24.
@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class YanongTableViewCell: BaseTableViewCell {
+class YanongListTableViewCell: BaseTableViewCell {
     
     static let id = "YanongTableViewCell"
     
