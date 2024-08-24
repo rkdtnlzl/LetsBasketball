@@ -127,4 +127,54 @@ final class NetworkManager {
             return Disposables.create()
         }
     }
+    
+    func fetchYeongdeungpoPost() -> Observable<AllGetPostModel> {
+        return Observable.create { observer in
+            do {
+                let request = try Router.allGetPost(product_id: "영등포구").asURLRequest()
+                
+                self.session.request(request)
+                    .responseDecodable(of: AllGetPostModel.self) { response in
+                        switch response.result {
+                        case .success(let success):
+                            print(success)
+                            observer.onNext(success)
+                            observer.onCompleted()
+                            
+                        case .failure(let failure):
+                            print(failure)
+                            observer.onError(failure)
+                        }
+                    }
+            } catch {
+                observer.onError(error)
+            }
+            return Disposables.create()
+        }
+    }
+    
+    func fetchMapoPost() -> Observable<AllGetPostModel> {
+        return Observable.create { observer in
+            do {
+                let request = try Router.allGetPost(product_id: "마포구").asURLRequest()
+                
+                self.session.request(request)
+                    .responseDecodable(of: AllGetPostModel.self) { response in
+                        switch response.result {
+                        case .success(let success):
+                            print(success)
+                            observer.onNext(success)
+                            observer.onCompleted()
+                            
+                        case .failure(let failure):
+                            print(failure)
+                            observer.onError(failure)
+                        }
+                    }
+            } catch {
+                observer.onError(error)
+            }
+            return Disposables.create()
+        }
+    }
 }

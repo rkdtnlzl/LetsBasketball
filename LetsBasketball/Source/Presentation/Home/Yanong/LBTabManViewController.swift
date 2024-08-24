@@ -11,7 +11,7 @@ import SnapKit
 import Tabman
 import Pageboy
 
-final class LBTabManViewController: BaseViewController, PageboyViewControllerDataSource, TMBarDataSource {
+final class LBTabManViewController: BaseViewController {
     deinit {
         print("deinit \(self)")
     }
@@ -21,21 +21,23 @@ final class LBTabManViewController: BaseViewController, PageboyViewControllerDat
     
     let categories = ["전체", "영등포구", "마포구", "용산구", "동작구"]
     
-    private let viewControllers: [UIViewController] = {
-        let firstVC = AllYanongViewController()
-        let secondVC = UIViewController()
-        secondVC.view.backgroundColor = .green
-        let thirdVC = UIViewController()
-        thirdVC.view.backgroundColor = .blue
-        return [firstVC, secondVC, thirdVC]
+    private lazy var viewControllers: [UIViewController] = {
+        return categories.map { RegionViewController(region: $0) }
     }()
+    
+    let postButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationItem.title = "야농게시판"
+        
         tabManVC.dataSource = self
 
+        let barView = UIView()
+        barView.backgroundColor = .white
+        
         let bar = TMBar.ButtonBar()
+        bar.backgroundView.style = .custom(view: barView)
         bar.layout.transitionStyle = .snap
         bar.buttons.customize { button in
             button.tintColor = .gray
@@ -53,6 +55,19 @@ final class LBTabManViewController: BaseViewController, PageboyViewControllerDat
         containerView.addSubview(tabManVC.view)
         addChild(tabManVC)
         tabManVC.didMove(toParent: self)
+        containerView.addSubview(postButton)
+    }
+    
+    override func configureView() {
+        postButton.setImage(UIImage(systemName: "plus"), for: .normal)
+        postButton.tintColor = UIColor(named: "BaseColor")
+        postButton.layer.cornerRadius = 25
+        postButton.layer.borderWidth = 1.7
+        postButton.layer.borderColor = UIColor(named: "BaseColor")?.cgColor
+    }
+    
+    override func configureTarget() {
+        postButton.addTarget(self, action: #selector(postButtonClicked), for: .touchUpInside)
     }
     
     override func configureConstraints() {
@@ -62,7 +77,19 @@ final class LBTabManViewController: BaseViewController, PageboyViewControllerDat
         tabManVC.view.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+        postButton.snp.makeConstraints { make in
+            make.bottom.trailing.equalToSuperview().inset(30)
+            make.size.equalTo(50)
+        }
     }
+    
+    @objc func postButtonClicked() {
+        let vc = PostYanongViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+extension LBTabManViewController: PageboyViewControllerDataSource, TMBarDataSource {
     
     func numberOfViewControllers(in pageboyViewController: PageboyViewController) -> Int {
         return viewControllers.count
