@@ -27,6 +27,10 @@ final class YanongListViewController: BaseViewController {
         bind()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        hiddenTabBar()
+    }
+    
     override func configureHierarchy() {
         view.addSubview(tableView)
     }
