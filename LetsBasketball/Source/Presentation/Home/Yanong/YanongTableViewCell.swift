@@ -21,10 +21,10 @@ class YanongTableViewCell: BaseTableViewCell {
     }
     
     override func configureView() {
-        titleLabel.font = UIFont(name: "Pretenard-SemiBold", size: 17)
+        titleLabel.font = UIFont(name: "Pretendard-SemiBold", size: 17)
         titleLabel.textColor = .black
         
-        descriptionLabel.font = UIFont(name: "Pretenard-Regular", size: 15)
+        descriptionLabel.font = UIFont(name: "Pretendard-Regular", size: 15)
         descriptionLabel.textColor = .black
     }
     
