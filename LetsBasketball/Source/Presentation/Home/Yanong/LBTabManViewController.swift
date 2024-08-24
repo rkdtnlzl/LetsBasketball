@@ -34,7 +34,7 @@ final class LBTabManViewController: BaseViewController {
         tabManVC.dataSource = self
 
         let barView = UIView()
-        barView.backgroundColor = .white
+        barView.backgroundColor = UIColor(hexCode: "F7F7F7")
         
         let bar = TMBar.ButtonBar()
         bar.backgroundView.style = .custom(view: barView)
