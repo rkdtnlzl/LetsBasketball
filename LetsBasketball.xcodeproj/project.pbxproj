@@ -163,6 +163,15 @@
 			path = Refresh;
 			sourceTree = "<group>";
 		};
+		01D112892C79A38B006B20BB /* AllYanong */ = {
+			isa = PBXGroup;
+			children = (
+				01D1127D2C776CCA006B20BB /* AllYanongViewController.swift */,
+				01D112872C78AFC8006B20BB /* AllYanongViewModel.swift */,
+			);
+			path = AllYanong;
+			sourceTree = "<group>";
+		};
 		01E409172C6CD0C60006B86F = {
 			isa = PBXGroup;
 			children = (
@@ -400,9 +409,8 @@
 			isa = PBXGroup;
 			children = (
 				01E409BC2C736E9B0006B86F /* LBTabManViewController.swift */,
-				01D1127D2C776CCA006B20BB /* AllYanongViewController.swift */,
-				01D112872C78AFC8006B20BB /* AllYanongViewModel.swift */,
 				01D112812C776EEC006B20BB /* YanongTableViewCell.swift */,
+				01D112892C79A38B006B20BB /* AllYanong */,
 			);
 			path = Yanong;
 			sourceTree = "<group>";
