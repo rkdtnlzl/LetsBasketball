@@ -128,6 +128,7 @@ final class NetworkManager {
         }
     }
     
+    // MARK: 영등포구 포스트 불러오기
     func fetchYeongdeungpoPost() -> Observable<AllGetPostModel> {
         return Observable.create { observer in
             do {
@@ -153,6 +154,7 @@ final class NetworkManager {
         }
     }
     
+    // MARK: 마포구 포스트 불러오기
     func fetchMapoPost() -> Observable<AllGetPostModel> {
         return Observable.create { observer in
             do {
@@ -163,6 +165,32 @@ final class NetworkManager {
                         switch response.result {
                         case .success(let success):
                             print(success)
+                            observer.onNext(success)
+                            observer.onCompleted()
+                            
+                        case .failure(let failure):
+                            print(failure)
+                            observer.onError(failure)
+                        }
+                    }
+            } catch {
+                observer.onError(error)
+            }
+            return Disposables.create()
+        }
+    }
+    
+    // MARK: 게시글 작성
+    func postYanong(title: String, content: String, product_id: String) -> Observable<PostYanongModel> {
+        return Observable.create { observer in
+            do {
+                let query = PostYanongQuery(title: title, content: content, product_id: product_id)
+                let request = try Router.postYanong(query: query).asURLRequest()
+                
+                self.session.request(request)
+                    .responseDecodable(of: PostYanongModel.self) { response in
+                        switch response.result {
+                        case .success(let success):
                             observer.onNext(success)
                             observer.onCompleted()
                             
