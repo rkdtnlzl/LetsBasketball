@@ -1,5 +1,5 @@
 //
-//  RegionViewModel.swift
+//  YanongListViewModel.swift
 //  LetsBasketball
 //
 //  Created by 강석호 on 8/24/24.
@@ -8,7 +8,7 @@
 import RxSwift
 import RxCocoa
 
-class RegionViewModel {
+class YanongListViewModel {
     
     private let region: String
     

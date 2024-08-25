@@ -28,6 +28,10 @@ final class HomeViewController: BaseViewController {
         bind()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        showTabBar()
+    }
+    
     func bind() {
         let input = HomeViewModel.Input(
             yanongTapped: homeView.yanongButton.rx.tap

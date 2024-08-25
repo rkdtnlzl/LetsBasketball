@@ -22,4 +22,12 @@ extension UIViewController {
         alertController.addAction(confirmAction)
         self.present(alertController, animated: true, completion: nil)
     }
+    
+    func hiddenTabBar() {
+        tabBarController?.tabBar.isHidden = true
+    }
+    
+    func showTabBar() {
+        tabBarController?.tabBar.isHidden = false
+    }
 }

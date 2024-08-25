@@ -11,11 +11,15 @@
 		01D112732C7610A5006B20BB /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = 01D112722C7610A5006B20BB /* Tabman */; };
 		01D1127C2C771D2C006B20BB /* LBRequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D1127B2C771D2C006B20BB /* LBRequestInterceptor.swift */; };
 		01D112802C776E4F006B20BB /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D1127F2C776E4F006B20BB /* BaseTableViewCell.swift */; };
-		01D112822C776EEC006B20BB /* YanongTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D112812C776EEC006B20BB /* YanongTableViewCell.swift */; };
+		01D112822C776EEC006B20BB /* YanongListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D112812C776EEC006B20BB /* YanongListTableViewCell.swift */; };
 		01D112862C78A8A5006B20BB /* AllGetPostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D112852C78A8A5006B20BB /* AllGetPostModel.swift */; };
-		01D1128C2C79A90E006B20BB /* RegionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D1128B2C79A90E006B20BB /* RegionViewController.swift */; };
-		01D1128F2C79AEEA006B20BB /* RegionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D1128E2C79AEEA006B20BB /* RegionViewModel.swift */; };
+		01D1128C2C79A90E006B20BB /* YanongListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D1128B2C79A90E006B20BB /* YanongListViewController.swift */; };
+		01D1128F2C79AEEA006B20BB /* YanongListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D1128E2C79AEEA006B20BB /* YanongListViewModel.swift */; };
 		01D112912C79C559006B20BB /* PostYanongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D112902C79C559006B20BB /* PostYanongViewController.swift */; };
+		01D112952C79D4C7006B20BB /* PostYanongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D112942C79D4C7006B20BB /* PostYanongView.swift */; };
+		01D112982C7B00B1006B20BB /* PostYanongViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D112972C7B00B1006B20BB /* PostYanongViewModel.swift */; };
+		01D1129A2C7B0AAF006B20BB /* PostYanongModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D112992C7B0AAF006B20BB /* PostYanongModel.swift */; };
+		01D1129E2C7B0B2D006B20BB /* PostYanongQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D1129D2C7B0B2D006B20BB /* PostYanongQuery.swift */; };
 		01E409242C6CD0C60006B86F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E409232C6CD0C60006B86F /* AppDelegate.swift */; };
 		01E409262C6CD0C60006B86F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E409252C6CD0C60006B86F /* SceneDelegate.swift */; };
 		01E409282C6CD0C60006B86F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E409272C6CD0C60006B86F /* LoginViewController.swift */; };
@@ -75,11 +79,15 @@
 		01D112532C747554006B20BB /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		01D1127B2C771D2C006B20BB /* LBRequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LBRequestInterceptor.swift; sourceTree = "<group>"; };
 		01D1127F2C776E4F006B20BB /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
-		01D112812C776EEC006B20BB /* YanongTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YanongTableViewCell.swift; sourceTree = "<group>"; };
+		01D112812C776EEC006B20BB /* YanongListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YanongListTableViewCell.swift; sourceTree = "<group>"; };
 		01D112852C78A8A5006B20BB /* AllGetPostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllGetPostModel.swift; sourceTree = "<group>"; };
-		01D1128B2C79A90E006B20BB /* RegionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionViewController.swift; sourceTree = "<group>"; };
-		01D1128E2C79AEEA006B20BB /* RegionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionViewModel.swift; sourceTree = "<group>"; };
+		01D1128B2C79A90E006B20BB /* YanongListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YanongListViewController.swift; sourceTree = "<group>"; };
+		01D1128E2C79AEEA006B20BB /* YanongListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YanongListViewModel.swift; sourceTree = "<group>"; };
 		01D112902C79C559006B20BB /* PostYanongViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostYanongViewController.swift; sourceTree = "<group>"; };
+		01D112942C79D4C7006B20BB /* PostYanongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostYanongView.swift; sourceTree = "<group>"; };
+		01D112972C7B00B1006B20BB /* PostYanongViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostYanongViewModel.swift; sourceTree = "<group>"; };
+		01D112992C7B0AAF006B20BB /* PostYanongModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostYanongModel.swift; sourceTree = "<group>"; };
+		01D1129D2C7B0B2D006B20BB /* PostYanongQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostYanongQuery.swift; sourceTree = "<group>"; };
 		01E409202C6CD0C60006B86F /* LetsBasketball.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LetsBasketball.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01E409232C6CD0C60006B86F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01E409252C6CD0C60006B86F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -149,12 +157,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		01D112832C78A81E006B20BB /* GetPost */ = {
+		01D112832C78A81E006B20BB /* Yanong */ = {
 			isa = PBXGroup;
 			children = (
-				01D112852C78A8A5006B20BB /* AllGetPostModel.swift */,
+				01D1129C2C7B0B0B006B20BB /* ResponseDTO */,
+				01D1129B2C7B0B04006B20BB /* RequestDTO */,
 			);
-			path = GetPost;
+			path = Yanong;
 			sourceTree = "<group>";
 		};
 		01D112842C78A850006B20BB /* Refresh */ = {
@@ -163,6 +172,43 @@
 				01E409882C707FA90006B86F /* RefreshModel.swift */,
 			);
 			path = Refresh;
+			sourceTree = "<group>";
+		};
+		01D112922C79D428006B20BB /* YanongList */ = {
+			isa = PBXGroup;
+			children = (
+				01D1128B2C79A90E006B20BB /* YanongListViewController.swift */,
+				01D1128E2C79AEEA006B20BB /* YanongListViewModel.swift */,
+				01D112812C776EEC006B20BB /* YanongListTableViewCell.swift */,
+			);
+			path = YanongList;
+			sourceTree = "<group>";
+		};
+		01D112932C79D464006B20BB /* PostYanong */ = {
+			isa = PBXGroup;
+			children = (
+				01D112902C79C559006B20BB /* PostYanongViewController.swift */,
+				01D112972C7B00B1006B20BB /* PostYanongViewModel.swift */,
+				01D112942C79D4C7006B20BB /* PostYanongView.swift */,
+			);
+			path = PostYanong;
+			sourceTree = "<group>";
+		};
+		01D1129B2C7B0B04006B20BB /* RequestDTO */ = {
+			isa = PBXGroup;
+			children = (
+				01D1129D2C7B0B2D006B20BB /* PostYanongQuery.swift */,
+			);
+			path = RequestDTO;
+			sourceTree = "<group>";
+		};
+		01D1129C2C7B0B0B006B20BB /* ResponseDTO */ = {
+			isa = PBXGroup;
+			children = (
+				01D112852C78A8A5006B20BB /* AllGetPostModel.swift */,
+				01D112992C7B0AAF006B20BB /* PostYanongModel.swift */,
+			);
+			path = ResponseDTO;
 			sourceTree = "<group>";
 		};
 		01E409172C6CD0C60006B86F = {
@@ -262,7 +308,7 @@
 			isa = PBXGroup;
 			children = (
 				01D112842C78A850006B20BB /* Refresh */,
-				01D112832C78A81E006B20BB /* GetPost */,
+				01D112832C78A81E006B20BB /* Yanong */,
 				01E4095A2C6DC0270006B86F /* Onboarding */,
 				01E409592C6DC01C0006B86F /* Base */,
 			);
@@ -402,10 +448,8 @@
 			isa = PBXGroup;
 			children = (
 				01E409BC2C736E9B0006B86F /* LBTabManViewController.swift */,
-				01D112812C776EEC006B20BB /* YanongTableViewCell.swift */,
-				01D1128B2C79A90E006B20BB /* RegionViewController.swift */,
-				01D1128E2C79AEEA006B20BB /* RegionViewModel.swift */,
-				01D112902C79C559006B20BB /* PostYanongViewController.swift */,
+				01D112932C79D464006B20BB /* PostYanong */,
+				01D112922C79D428006B20BB /* YanongList */,
 			);
 			path = Yanong;
 			sourceTree = "<group>";
@@ -516,9 +560,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01D1128F2C79AEEA006B20BB /* RegionViewModel.swift in Sources */,
-				01D1128C2C79A90E006B20BB /* RegionViewController.swift in Sources */,
+				01D1128F2C79AEEA006B20BB /* YanongListViewModel.swift in Sources */,
+				01D1129A2C7B0AAF006B20BB /* PostYanongModel.swift in Sources */,
+				01D1128C2C79A90E006B20BB /* YanongListViewController.swift in Sources */,
 				01D112862C78A8A5006B20BB /* AllGetPostModel.swift in Sources */,
+				01D112952C79D4C7006B20BB /* PostYanongView.swift in Sources */,
 				01D112542C747554006B20BB /* NetworkManager.swift in Sources */,
 				01E409B02C735B5A0006B86F /* TabBarViewController.swift in Sources */,
 				01E409A42C73219C0006B86F /* HomeView.swift in Sources */,
@@ -534,10 +580,11 @@
 				01E409902C70B9C60006B86F /* JoinQuery.swift in Sources */,
 				01E409832C707D620006B86F /* LoginQuery.swift in Sources */,
 				01E4099A2C70E8DB0006B86F /* String+.swift in Sources */,
-				01D112822C776EEC006B20BB /* YanongTableViewCell.swift in Sources */,
+				01D112822C776EEC006B20BB /* YanongListTableViewCell.swift in Sources */,
 				01E4097F2C6DF1550006B86F /* JoinView.swift in Sources */,
 				01E409282C6CD0C60006B86F /* LoginViewController.swift in Sources */,
 				01E409BD2C736E9B0006B86F /* LBTabManViewController.swift in Sources */,
+				01D1129E2C7B0B2D006B20BB /* PostYanongQuery.swift in Sources */,
 				01E409612C6DC2110006B86F /* UserDefaultsManager.swift in Sources */,
 				01E4097B2C6DEBD10006B86F /* LoginViewModel.swift in Sources */,
 				01D1127C2C771D2C006B20BB /* LBRequestInterceptor.swift in Sources */,
@@ -557,6 +604,7 @@
 				01E409262C6CD0C60006B86F /* SceneDelegate.swift in Sources */,
 				01E409AB2C73449D0006B86F /* RecentCollectionViewCell.swift in Sources */,
 				01E4097D2C6DECE10006B86F /* JoinViewController.swift in Sources */,
+				01D112982C7B00B1006B20BB /* PostYanongViewModel.swift in Sources */,
 				01E409512C6CE3050006B86F /* BaseViewController.swift in Sources */,
 				01D112912C79C559006B20BB /* PostYanongViewController.swift in Sources */,
 				01E409B82C7360C50006B86F /* UIColor+.swift in Sources */,

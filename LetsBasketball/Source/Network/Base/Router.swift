@@ -13,6 +13,7 @@ enum Router {
     case join(query: JoinQuery)
     case refresh
     case allGetPost(product_id: String)
+    case postYanong(query: PostYanongQuery)
 }
 
 extension Router: TargetType {
@@ -26,6 +27,8 @@ extension Router: TargetType {
             return .get
         case .allGetPost:
             return .get
+        case .postYanong(query: let query):
+            return .post
         }
     }
     
@@ -50,6 +53,9 @@ extension Router: TargetType {
         case .join(let query):
             let encoder = JSONEncoder()
             return try? encoder.encode(query)
+        case .postYanong(let query):
+            let encoder = JSONEncoder()
+            return try? encoder.encode(query)
         default:
             return nil
         }
@@ -68,6 +74,8 @@ extension Router: TargetType {
         case .refresh:
             return "/auth/refresh"
         case .allGetPost:
+            return "/posts"
+        case .postYanong:
             return "/posts"
         }
     }
@@ -92,6 +100,13 @@ extension Router: TargetType {
                 Header.sesacKey.rawValue: APIKey.key
             ]
         case .allGetPost:
+            return [
+                Header.authorization.rawValue: UserDefaultsManager.shared.token,
+                Header.contentType.rawValue: Header.json.rawValue,
+                Header.refresh.rawValue: UserDefaultsManager.shared.refreshToken,
+                Header.sesacKey.rawValue: APIKey.key
+            ]
+        case .postYanong:
             return [
                 Header.authorization.rawValue: UserDefaultsManager.shared.token,
                 Header.contentType.rawValue: Header.json.rawValue,
