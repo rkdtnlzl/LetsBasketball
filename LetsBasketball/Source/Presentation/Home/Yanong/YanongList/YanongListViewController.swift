@@ -63,5 +63,14 @@ final class YanongListViewController: BaseViewController {
                 }
             })
             .disposed(by: disposeBag)
+        
+        tableView.rx.modelSelected(AllGetPostData.self)
+            .subscribe(with: self, onNext: { owner, data in
+                let vc = DetailYanongViewController()
+                vc.detailYanongView.titleLabel.text = data.title
+                vc.detailYanongView.contentLabel.text = data.content
+                owner.navigationController?.pushViewController(vc, animated: true)
+            })
+            .disposed(by: disposeBag)
     }
 }
