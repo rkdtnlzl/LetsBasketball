@@ -34,7 +34,7 @@ final class LBTabManViewController: BaseViewController {
         tabManVC.dataSource = self
 
         let barView = UIView()
-        barView.backgroundColor = UIColor(hexCode: "F7F7F7")
+        barView.backgroundColor = UIColor(hexCode: "FBFBFC")
         
         let bar = TMBar.ButtonBar()
         bar.backgroundView.style = .custom(view: barView)
@@ -59,6 +59,7 @@ final class LBTabManViewController: BaseViewController {
     }
     
     override func configureView() {
+        postButton.backgroundColor = .white
         postButton.setImage(UIImage(systemName: "plus"), for: .normal)
         postButton.tintColor = UIColor(named: "BaseColor")
         postButton.layer.cornerRadius = 25

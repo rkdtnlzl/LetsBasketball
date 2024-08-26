@@ -27,7 +27,7 @@ extension Router: TargetType {
             return .get
         case .allGetPost:
             return .get
-        case .postYanong(query: let query):
+        case .postYanong:
             return .post
         }
     }
