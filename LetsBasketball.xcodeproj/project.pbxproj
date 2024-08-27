@@ -22,6 +22,11 @@
 		01D1129E2C7B0B2D006B20BB /* PostYanongQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D1129D2C7B0B2D006B20BB /* PostYanongQuery.swift */; };
 		01D112A12C7B4A2F006B20BB /* DetailYanongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D112A02C7B4A2F006B20BB /* DetailYanongViewController.swift */; };
 		01D112A32C7B4F61006B20BB /* DetailYanongView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D112A22C7B4F61006B20BB /* DetailYanongView.swift */; };
+		01D112B52C7C98B0006B20BB /* KakaoMapsSDK-SPM in Frameworks */ = {isa = PBXBuildFile; productRef = 01D112B42C7C98B0006B20BB /* KakaoMapsSDK-SPM */; };
+		01D112B72C7CA2CF006B20BB /* MyPrivacyInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01D112B62C7CA2CF006B20BB /* MyPrivacyInfo.plist */; };
+		01D112BA2C7CA9AC006B20BB /* KakaoMapBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D112B92C7CA9AC006B20BB /* KakaoMapBaseViewController.swift */; };
+		01D112CC2C7D8A6F006B20BB /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D112CB2C7D8A6F006B20BB /* MapViewController.swift */; };
+		01D112CE2C7D8C72006B20BB /* KakaoMapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D112CD2C7D8C72006B20BB /* KakaoMapManager.swift */; };
 		01E409242C6CD0C60006B86F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E409232C6CD0C60006B86F /* AppDelegate.swift */; };
 		01E409262C6CD0C60006B86F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E409252C6CD0C60006B86F /* SceneDelegate.swift */; };
 		01E409282C6CD0C60006B86F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E409272C6CD0C60006B86F /* LoginViewController.swift */; };
@@ -92,6 +97,10 @@
 		01D1129D2C7B0B2D006B20BB /* PostYanongQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostYanongQuery.swift; sourceTree = "<group>"; };
 		01D112A02C7B4A2F006B20BB /* DetailYanongViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailYanongViewController.swift; sourceTree = "<group>"; };
 		01D112A22C7B4F61006B20BB /* DetailYanongView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailYanongView.swift; sourceTree = "<group>"; };
+		01D112B62C7CA2CF006B20BB /* MyPrivacyInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = MyPrivacyInfo.plist; sourceTree = "<group>"; };
+		01D112B92C7CA9AC006B20BB /* KakaoMapBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoMapBaseViewController.swift; sourceTree = "<group>"; };
+		01D112CB2C7D8A6F006B20BB /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		01D112CD2C7D8C72006B20BB /* KakaoMapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoMapManager.swift; sourceTree = "<group>"; };
 		01E409202C6CD0C60006B86F /* LetsBasketball.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LetsBasketball.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01E409232C6CD0C60006B86F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01E409252C6CD0C60006B86F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -155,6 +164,7 @@
 				01E4093B2C6CD6CC0006B86F /* Alamofire in Frameworks */,
 				01E409462C6CD6F90006B86F /* SnapKit in Frameworks */,
 				01D112732C7610A5006B20BB /* Tabman in Frameworks */,
+				01D112B52C7C98B0006B20BB /* KakaoMapsSDK-SPM in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +204,7 @@
 				01D112902C79C559006B20BB /* PostYanongViewController.swift */,
 				01D112972C7B00B1006B20BB /* PostYanongViewModel.swift */,
 				01D112942C79D4C7006B20BB /* PostYanongView.swift */,
+				01D112CB2C7D8A6F006B20BB /* MapViewController.swift */,
 			);
 			path = PostYanong;
 			sourceTree = "<group>";
@@ -249,6 +260,7 @@
 				01E409472C6CDD020006B86F /* APIKey.swift */,
 				01E409492C6CDDE70006B86F /* APIUrl.swift */,
 				01E409312C6CD0C90006B86F /* Info.plist */,
+				01D112B62C7CA2CF006B20BB /* MyPrivacyInfo.plist */,
 			);
 			path = LetsBasketball;
 			sourceTree = "<group>";
@@ -300,6 +312,7 @@
 		01E4094F2C6CE2F80006B86F /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				01D112B92C7CA9AC006B20BB /* KakaoMapBaseViewController.swift */,
 				01E409502C6CE3050006B86F /* BaseViewController.swift */,
 				01E409532C6CE3100006B86F /* BaseView.swift */,
 				01E409AC2C7344D20006B86F /* BaseCollectionViewCell.swift */,
@@ -334,6 +347,7 @@
 				01E409572C6DBDF80006B86F /* HTTPHeaderField.swift */,
 				01E4095B2C6DC0920006B86F /* TargetType.swift */,
 				01E409602C6DC2110006B86F /* UserDefaultsManager.swift */,
+				01D112CD2C7D8C72006B20BB /* KakaoMapManager.swift */,
 				01D112532C747554006B20BB /* NetworkManager.swift */,
 				01D1127B2C771D2C006B20BB /* LBRequestInterceptor.swift */,
 				01E409802C7079C30006B86F /* Router.swift */,
@@ -502,6 +516,7 @@
 				01E409422C6CD6EC0006B86F /* RxSwift */,
 				01E409452C6CD6F90006B86F /* SnapKit */,
 				01D112722C7610A5006B20BB /* Tabman */,
+				01D112B42C7C98B0006B20BB /* KakaoMapsSDK-SPM */,
 			);
 			productName = LetsBasketball;
 			productReference = 01E409202C6CD0C60006B86F /* LetsBasketball.app */;
@@ -537,6 +552,7 @@
 				01E4093F2C6CD6EC0006B86F /* XCRemoteSwiftPackageReference "RxSwift" */,
 				01E409442C6CD6F90006B86F /* XCRemoteSwiftPackageReference "SnapKit" */,
 				01D112712C7610A5006B20BB /* XCRemoteSwiftPackageReference "Tabman" */,
+				01D112B32C7C98B0006B20BB /* XCRemoteSwiftPackageReference "KakaoMapsSDK-SPM" */,
 			);
 			productRefGroup = 01E409212C6CD0C60006B86F /* Products */;
 			projectDirPath = "";
@@ -553,6 +569,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01E409732C6DCDB60006B86F /* Pretendard-SemiBold.ttf in Resources */,
+				01D112B72C7CA2CF006B20BB /* MyPrivacyInfo.plist in Resources */,
 				01E409722C6DCDB60006B86F /* Pretendard-Medium.ttf in Resources */,
 				01E409382C6CD1120006B86F /* .gitignore in Resources */,
 				01E409712C6DCDB60006B86F /* Pretendard-Regular.ttf in Resources */,
@@ -593,10 +610,12 @@
 				01E4098C2C709D680006B86F /* HomeViewController.swift in Sources */,
 				01E409902C70B9C60006B86F /* JoinQuery.swift in Sources */,
 				01E409832C707D620006B86F /* LoginQuery.swift in Sources */,
+				01D112CC2C7D8A6F006B20BB /* MapViewController.swift in Sources */,
 				01E4099A2C70E8DB0006B86F /* String+.swift in Sources */,
 				01D112822C776EEC006B20BB /* YanongListTableViewCell.swift in Sources */,
 				01D112A12C7B4A2F006B20BB /* DetailYanongViewController.swift in Sources */,
 				01E4097F2C6DF1550006B86F /* JoinView.swift in Sources */,
+				01D112CE2C7D8C72006B20BB /* KakaoMapManager.swift in Sources */,
 				01E409282C6CD0C60006B86F /* LoginViewController.swift in Sources */,
 				01E409BD2C736E9B0006B86F /* LBTabManViewController.swift in Sources */,
 				01D1129E2C7B0B2D006B20BB /* PostYanongQuery.swift in Sources */,
@@ -613,6 +632,7 @@
 				01E409B62C735C280006B86F /* ProfileViewController.swift in Sources */,
 				01E409242C6CD0C60006B86F /* AppDelegate.swift in Sources */,
 				01E409482C6CDD020006B86F /* APIKey.swift in Sources */,
+				01D112BA2C7CA9AC006B20BB /* KakaoMapBaseViewController.swift in Sources */,
 				01E409AD2C7344D20006B86F /* BaseCollectionViewCell.swift in Sources */,
 				01E409542C6CE3100006B86F /* BaseView.swift in Sources */,
 				01D112A32C7B4F61006B20BB /* DetailYanongView.swift in Sources */,
@@ -787,6 +807,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -819,6 +840,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -854,6 +876,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 3.2.0;
+			};
+		};
+		01D112B32C7C98B0006B20BB /* XCRemoteSwiftPackageReference "KakaoMapsSDK-SPM" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kakao-mapsSDK/KakaoMapsSDK-SPM.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.10.5;
 			};
 		};
 		01E409392C6CD6CC0006B86F /* XCRemoteSwiftPackageReference "Alamofire" */ = {
@@ -895,6 +925,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 01D112712C7610A5006B20BB /* XCRemoteSwiftPackageReference "Tabman" */;
 			productName = Tabman;
+		};
+		01D112B42C7C98B0006B20BB /* KakaoMapsSDK-SPM */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 01D112B32C7C98B0006B20BB /* XCRemoteSwiftPackageReference "KakaoMapsSDK-SPM" */;
+			productName = "KakaoMapsSDK-SPM";
 		};
 		01E4093A2C6CD6CC0006B86F /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
