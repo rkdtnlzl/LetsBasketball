@@ -52,6 +52,13 @@ final class PostYanongViewController: BaseViewController {
     
     @objc func mapButtonClicked() {
         let vc = MapViewController()
+        vc.delegate = self
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+extension PostYanongViewController: MapViewControllerDelegate {
+    func didSelectRegionName(_ regionName: String) {
+        postYanongView.regionLabel.text = regionName
     }
 }
