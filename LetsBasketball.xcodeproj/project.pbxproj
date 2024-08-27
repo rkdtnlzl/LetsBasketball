@@ -27,6 +27,7 @@
 		01D112BA2C7CA9AC006B20BB /* KakaoMapBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D112B92C7CA9AC006B20BB /* KakaoMapBaseViewController.swift */; };
 		01D112CC2C7D8A6F006B20BB /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D112CB2C7D8A6F006B20BB /* MapViewController.swift */; };
 		01D112CE2C7D8C72006B20BB /* KakaoMapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D112CD2C7D8C72006B20BB /* KakaoMapManager.swift */; };
+		01D112D62C7E2CBC006B20BB /* KakaoAddressResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D112D52C7E2CBC006B20BB /* KakaoAddressResponse.swift */; };
 		01E409242C6CD0C60006B86F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E409232C6CD0C60006B86F /* AppDelegate.swift */; };
 		01E409262C6CD0C60006B86F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E409252C6CD0C60006B86F /* SceneDelegate.swift */; };
 		01E409282C6CD0C60006B86F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E409272C6CD0C60006B86F /* LoginViewController.swift */; };
@@ -101,6 +102,7 @@
 		01D112B92C7CA9AC006B20BB /* KakaoMapBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoMapBaseViewController.swift; sourceTree = "<group>"; };
 		01D112CB2C7D8A6F006B20BB /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		01D112CD2C7D8C72006B20BB /* KakaoMapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoMapManager.swift; sourceTree = "<group>"; };
+		01D112D52C7E2CBC006B20BB /* KakaoAddressResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAddressResponse.swift; sourceTree = "<group>"; };
 		01E409202C6CD0C60006B86F /* LetsBasketball.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LetsBasketball.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01E409232C6CD0C60006B86F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01E409252C6CD0C60006B86F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -235,6 +237,14 @@
 			path = DetailYanong;
 			sourceTree = "<group>";
 		};
+		01D112D42C7E2CA7006B20BB /* KakaoAddress */ = {
+			isa = PBXGroup;
+			children = (
+				01D112D52C7E2CBC006B20BB /* KakaoAddressResponse.swift */,
+			);
+			path = KakaoAddress;
+			sourceTree = "<group>";
+		};
 		01E409172C6CD0C60006B86F = {
 			isa = PBXGroup;
 			children = (
@@ -333,6 +343,7 @@
 		01E409562C6CE3DB0006B86F /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				01D112D42C7E2CA7006B20BB /* KakaoAddress */,
 				01D112842C78A850006B20BB /* Refresh */,
 				01D112832C78A81E006B20BB /* Yanong */,
 				01E4095A2C6DC0270006B86F /* Onboarding */,
@@ -604,6 +615,7 @@
 				01E409782C6DD9C90006B86F /* UITextField+.swift in Sources */,
 				01E409A92C732ED90006B86F /* LBBoardView.swift in Sources */,
 				01E409582C6DBDF80006B86F /* HTTPHeaderField.swift in Sources */,
+				01D112D62C7E2CBC006B20BB /* KakaoAddressResponse.swift in Sources */,
 				01D112802C776E4F006B20BB /* BaseTableViewCell.swift in Sources */,
 				01E4095F2C6DC1A90006B86F /* UIViewController+.swift in Sources */,
 				01E409872C707F6C0006B86F /* LoginModel.swift in Sources */,
