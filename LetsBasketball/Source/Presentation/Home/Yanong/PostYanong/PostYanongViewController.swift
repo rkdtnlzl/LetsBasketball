@@ -24,6 +24,11 @@ final class PostYanongViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bind()
+        configureTarget()
+    }
+    
+    override func configureTarget() {
+        postYanongView.mapButton.addTarget(self, action: #selector(mapButtonClicked), for: .touchUpInside)
     }
     
     func bind() {
@@ -40,7 +45,13 @@ final class PostYanongViewController: BaseViewController {
             .observe(on: MainScheduler.instance)
             .bind(with: self, onNext: { owner, result in
                 print("게시글 작성 성공: \(result)")
+                owner.navigationController?.popViewController(animated: true)
             })
             .disposed(by: disposeBag)
+    }
+    
+    @objc func mapButtonClicked() {
+        let vc = MapViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

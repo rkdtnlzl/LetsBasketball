@@ -16,7 +16,7 @@ final class PostYanongView: BaseView {
     let contentView = UITextView()
     private let mapLabel = UILabel()
     private let mapThumbnail = UIImageView()
-    private let mapButton = UIButton()
+    let mapButton = UIButton()
     let completeButton = UIButton()
     
     override func configureHierarchy() {
@@ -57,6 +57,7 @@ final class PostYanongView: BaseView {
         mapThumbnail.contentMode = .scaleToFill
         mapThumbnail.layer.borderColor = UIColor.gray.cgColor
         mapThumbnail.layer.borderWidth = 0.6
+        mapThumbnail.isUserInteractionEnabled = true
         
         mapButton.backgroundColor = .clear
         
