@@ -181,10 +181,10 @@ final class NetworkManager {
     }
     
     // MARK: 게시글 작성
-    func postYanong(title: String, content: String, product_id: String) -> Observable<PostYanongModel> {
+    func postYanong(title: String, content: String, product_id: String, latitude: String, longitude: String) -> Observable<PostYanongModel> {
         return Observable.create { observer in
             do {
-                let query = PostYanongQuery(title: title, content: content, product_id: product_id)
+                let query = PostYanongQuery(title: title, content: content, product_id: product_id, content1: latitude, content2: longitude)
                 let request = try Router.postYanong(query: query).asURLRequest()
                 
                 self.session.request(request)

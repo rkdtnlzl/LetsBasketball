@@ -16,7 +16,8 @@ final class PostYanongView: BaseView {
     let contentView = UITextView()
     private let mapLabel = UILabel()
     private let mapThumbnail = UIImageView()
-    private let mapButton = UIButton()
+    let mapButton = UIButton()
+    let regionLabel = UILabel()
     let completeButton = UIButton()
     
     override func configureHierarchy() {
@@ -27,6 +28,7 @@ final class PostYanongView: BaseView {
         addSubview(mapLabel)
         addSubview(mapThumbnail)
         mapThumbnail.addSubview(mapButton)
+        addSubview(regionLabel)
         addSubview(completeButton)
     }
     
@@ -57,8 +59,18 @@ final class PostYanongView: BaseView {
         mapThumbnail.contentMode = .scaleToFill
         mapThumbnail.layer.borderColor = UIColor.gray.cgColor
         mapThumbnail.layer.borderWidth = 0.6
+        mapThumbnail.isUserInteractionEnabled = true
         
         mapButton.backgroundColor = .clear
+        
+        regionLabel.font = UIFont(name: "Pretendard-SemiBold", size: 18)
+        regionLabel.textColor = UIColor(named: "BaseColor")
+        regionLabel.textAlignment = .center
+        regionLabel.backgroundColor = UIColor(hexCode: "F1DBDB")
+        regionLabel.layer.cornerRadius = 10
+        regionLabel.layer.borderWidth = 0.6
+        regionLabel.layer.borderColor = UIColor(named: "BaseColor")?.cgColor
+        regionLabel.isHidden = true
         
         completeButton.setTitle("작성하기", for: .normal)
         completeButton.setTitleColor(.white, for: .normal)
@@ -97,6 +109,12 @@ final class PostYanongView: BaseView {
         }
         mapButton.snp.makeConstraints { make in
             make.edges.equalToSuperview()
+        }
+        regionLabel.snp.makeConstraints { make in
+            make.top.equalTo(mapButton.snp.bottom).offset(20)
+            make.leading.equalToSuperview().inset(20)
+            make.height.equalTo(30)
+            make.width.equalTo(80)
         }
         completeButton.snp.makeConstraints { make in
             make.bottom.equalToSuperview().inset(80)
