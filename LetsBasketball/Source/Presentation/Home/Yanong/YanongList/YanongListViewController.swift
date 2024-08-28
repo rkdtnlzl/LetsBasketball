@@ -7,11 +7,13 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 
 final class YanongListViewController: BaseViewController {
     
     let tableView = UITableView()
     private let viewModel: YanongListViewModel
+    private let fetchTrigger = PublishSubject<Void>()
 
     init(region: String) {
         self.viewModel = YanongListViewModel(region: region)
@@ -29,6 +31,7 @@ final class YanongListViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         hiddenTabBar()
+        fetchTrigger.onNext(())
     }
     
     override func configureHierarchy() {
@@ -47,16 +50,18 @@ final class YanongListViewController: BaseViewController {
     }
     
     private func bind() {
-        let input = YanongListViewModel.Input(fetchTrigger: Observable.just(()))
+        let input = YanongListViewModel.Input(fetchTrigger: fetchTrigger.asObservable())
         let output = viewModel.transform(input: input)
         
         output.items
+            .observe(on: MainScheduler.instance)
             .bind(to: tableView.rx.items(cellIdentifier: YanongListTableViewCell.id, cellType: YanongListTableViewCell.self)) { index, model, cell in
                 cell.configure(with: model)
             }
             .disposed(by: disposeBag)
         
         output.error
+            .observe(on: MainScheduler.instance)
             .subscribe(onNext: { error in
                 if error != nil {
                     print("에러 발생")
@@ -69,8 +74,20 @@ final class YanongListViewController: BaseViewController {
                 let vc = DetailYanongViewController()
                 vc.detailYanongView.titleLabel.text = data.title
                 vc.detailYanongView.contentLabel.text = data.content
+                vc.detailYanongView.regionLabel.text = data.product_id
                 owner.navigationController?.pushViewController(vc, animated: true)
             })
+            .disposed(by: disposeBag)
+    }
+    
+    private func reloadData() {
+        let input = YanongListViewModel.Input(fetchTrigger: Observable.just(()))
+        let output = viewModel.transform(input: input)
+        
+        output.items
+            .bind(to: tableView.rx.items(cellIdentifier: YanongListTableViewCell.id, cellType: YanongListTableViewCell.self)) { index, model, cell in
+                cell.configure(with: model)
+            }
             .disposed(by: disposeBag)
     }
 }
