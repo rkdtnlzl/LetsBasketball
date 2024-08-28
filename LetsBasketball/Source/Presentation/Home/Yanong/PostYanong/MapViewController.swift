@@ -13,6 +13,7 @@ import Alamofire
 
 protocol MapViewControllerDelegate: AnyObject {
     func didSelectRegionName(_ regionName: String)
+    func didSelectcoordinate(_ lat: Double, lon: Double)
 }
 
 final class MapViewController: BaseViewController {
@@ -63,7 +64,6 @@ final class MapViewController: BaseViewController {
     
     @objc func registerButtonClicked() {
         if let coordinate = selectedCoordinate {
-            //            print("Selected coordinate: \(coordinate.latitude), \(coordinate.longitude)")
             convertCoordinateToAddress(latitude: coordinate.latitude, longitude: coordinate.longitude)
         } else {
             showAlert(title: "좌표를 선택해주세요")
@@ -87,6 +87,7 @@ final class MapViewController: BaseViewController {
                     if let regionName = data.documents.first?.address?.region_2depth_name {
                         print("Region 2 Depth Name: \(regionName)")
                         self.delegate?.didSelectRegionName(regionName)
+                        self.delegate?.didSelectcoordinate(latitude, lon: longitude)
                         self.navigationController?.popViewController(animated: true)
                     } else {
                         print("No address found")

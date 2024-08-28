@@ -12,4 +12,6 @@ struct PostYanongModel: Decodable {
     let title: String
     let content: String
     let product_id: String
+    let content1: String
+    let content2: String
 }
