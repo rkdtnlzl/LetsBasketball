@@ -75,6 +75,8 @@ final class YanongListViewController: BaseViewController {
                 vc.detailYanongView.titleLabel.text = data.title
                 vc.detailYanongView.contentLabel.text = data.content
                 vc.detailYanongView.regionLabel.text = data.product_id
+                vc.latitude = data.content1 ?? ""
+                vc.longitude = data.content2 ?? ""
                 owner.navigationController?.pushViewController(vc, animated: true)
             })
             .disposed(by: disposeBag)
