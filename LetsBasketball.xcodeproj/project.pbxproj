@@ -29,6 +29,9 @@
 		01D112CE2C7D8C72006B20BB /* KakaoMapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D112CD2C7D8C72006B20BB /* KakaoMapManager.swift */; };
 		01D112D62C7E2CBC006B20BB /* KakaoAddressResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D112D52C7E2CBC006B20BB /* KakaoAddressResponse.swift */; };
 		01D112E12C7F4031006B20BB /* DetailMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D112E02C7F4031006B20BB /* DetailMapViewController.swift */; };
+		01D112EE2C809E20006B20BB /* DetailYanongViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D112ED2C809E20006B20BB /* DetailYanongViewModel.swift */; };
+		01D112F02C80AD05006B20BB /* LikePostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D112EF2C80AD05006B20BB /* LikePostModel.swift */; };
+		01D112F22C80AD56006B20BB /* LikePostQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D112F12C80AD56006B20BB /* LikePostQuery.swift */; };
 		01E409242C6CD0C60006B86F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E409232C6CD0C60006B86F /* AppDelegate.swift */; };
 		01E409262C6CD0C60006B86F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E409252C6CD0C60006B86F /* SceneDelegate.swift */; };
 		01E409282C6CD0C60006B86F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E409272C6CD0C60006B86F /* LoginViewController.swift */; };
@@ -105,6 +108,9 @@
 		01D112CD2C7D8C72006B20BB /* KakaoMapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoMapManager.swift; sourceTree = "<group>"; };
 		01D112D52C7E2CBC006B20BB /* KakaoAddressResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAddressResponse.swift; sourceTree = "<group>"; };
 		01D112E02C7F4031006B20BB /* DetailMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMapViewController.swift; sourceTree = "<group>"; };
+		01D112ED2C809E20006B20BB /* DetailYanongViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailYanongViewModel.swift; sourceTree = "<group>"; };
+		01D112EF2C80AD05006B20BB /* LikePostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikePostModel.swift; sourceTree = "<group>"; };
+		01D112F12C80AD56006B20BB /* LikePostQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikePostQuery.swift; sourceTree = "<group>"; };
 		01E409202C6CD0C60006B86F /* LetsBasketball.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LetsBasketball.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01E409232C6CD0C60006B86F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01E409252C6CD0C60006B86F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -217,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				01D1129D2C7B0B2D006B20BB /* PostYanongQuery.swift */,
+				01D112F12C80AD56006B20BB /* LikePostQuery.swift */,
 			);
 			path = RequestDTO;
 			sourceTree = "<group>";
@@ -226,6 +233,7 @@
 			children = (
 				01D112852C78A8A5006B20BB /* AllGetPostModel.swift */,
 				01D112992C7B0AAF006B20BB /* PostYanongModel.swift */,
+				01D112EF2C80AD05006B20BB /* LikePostModel.swift */,
 			);
 			path = ResponseDTO;
 			sourceTree = "<group>";
@@ -234,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				01D112A02C7B4A2F006B20BB /* DetailYanongViewController.swift */,
+				01D112ED2C809E20006B20BB /* DetailYanongViewModel.swift */,
 				01D112A22C7B4F61006B20BB /* DetailYanongView.swift */,
 				01D112E02C7F4031006B20BB /* DetailMapViewController.swift */,
 			);
@@ -614,7 +623,9 @@
 				01E409B02C735B5A0006B86F /* TabBarViewController.swift in Sources */,
 				01E409A42C73219C0006B86F /* HomeView.swift in Sources */,
 				01E409892C707FA90006B86F /* RefreshModel.swift in Sources */,
+				01D112EE2C809E20006B20BB /* DetailYanongViewModel.swift in Sources */,
 				01E4094A2C6CDDE70006B86F /* APIUrl.swift in Sources */,
+				01D112F22C80AD56006B20BB /* LikePostQuery.swift in Sources */,
 				01E409782C6DD9C90006B86F /* UITextField+.swift in Sources */,
 				01D112E12C7F4031006B20BB /* DetailMapViewController.swift in Sources */,
 				01E409A92C732ED90006B86F /* LBBoardView.swift in Sources */,
@@ -647,6 +658,7 @@
 				01E409812C7079C30006B86F /* Router.swift in Sources */,
 				01E409B62C735C280006B86F /* ProfileViewController.swift in Sources */,
 				01E409242C6CD0C60006B86F /* AppDelegate.swift in Sources */,
+				01D112F02C80AD05006B20BB /* LikePostModel.swift in Sources */,
 				01E409482C6CDD020006B86F /* APIKey.swift in Sources */,
 				01D112BA2C7CA9AC006B20BB /* KakaoMapBaseViewController.swift in Sources */,
 				01E409AD2C7344D20006B86F /* BaseCollectionViewCell.swift in Sources */,
