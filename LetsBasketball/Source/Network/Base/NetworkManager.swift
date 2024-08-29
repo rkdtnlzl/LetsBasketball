@@ -205,4 +205,30 @@ final class NetworkManager {
             return Disposables.create()
         }
     }
+    
+    func likedPost(post_id: String, like_status: Bool) -> Observable<LikePostModel> {
+        return Observable.create { observer in
+            do {
+                let query = LikePostQuery(like_status: like_status)
+                let request = try Router.likePost(post_id: post_id, query: query).asURLRequest()
+                
+                self.session.request(request)
+                    .responseDecodable(of: LikePostModel.self) { response in
+                        switch response.result {
+                        case .success(let success):
+                            print(response)
+                            observer.onNext(success)
+                            observer.onCompleted()
+                            
+                        case .failure(let failure):
+                            print(failure)
+                            observer.onError(failure)
+                        }
+                    }
+            } catch {
+                observer.onError(error)
+            }
+            return Disposables.create()
+        }
+    }
 }
