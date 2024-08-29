@@ -13,6 +13,7 @@ struct AllGetPostModel: Decodable {
 }
 
 struct AllGetPostData: Decodable {
+    let post_id: String
     let product_id: String
     let title: String
     let content: String
