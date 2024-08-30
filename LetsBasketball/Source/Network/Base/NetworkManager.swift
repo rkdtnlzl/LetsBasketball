@@ -206,6 +206,7 @@ final class NetworkManager {
         }
     }
     
+    // MARK: 게시글 좋아요
     func likedPost(post_id: String, like_status: Bool) -> Observable<LikePostModel> {
         return Observable.create { observer in
             do {
@@ -217,6 +218,32 @@ final class NetworkManager {
                         switch response.result {
                         case .success(let success):
                             print(response)
+                            observer.onNext(success)
+                            observer.onCompleted()
+                            
+                        case .failure(let failure):
+                            print(failure)
+                            observer.onError(failure)
+                        }
+                    }
+            } catch {
+                observer.onError(error)
+            }
+            return Disposables.create()
+        }
+    }
+    
+    // MARK: 좋아요 게시글 조회
+    func fetchLikePost() -> Observable<AllGetPostModel> {
+        return Observable.create { observer in
+            do {
+                let request = try Router.fetchLikePost.asURLRequest()
+                
+                self.session.request(request)
+                    .responseDecodable(of: AllGetPostModel.self) { response in
+                        switch response.result {
+                        case .success(let success):
+                            print(success)
                             observer.onNext(success)
                             observer.onCompleted()
                             
