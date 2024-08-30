@@ -14,6 +14,8 @@ enum Router {
     case refresh
     case allGetPost(product_id: String)
     case postYanong(query: PostYanongQuery)
+    case likePost(post_id: String, query: LikePostQuery)
+    case fetchLikePost
 }
 
 extension Router: TargetType {
@@ -29,6 +31,10 @@ extension Router: TargetType {
             return .get
         case .postYanong:
             return .post
+        case .likePost:
+            return .post
+        case .fetchLikePost:
+            return .get
         }
     }
     
@@ -56,6 +62,9 @@ extension Router: TargetType {
         case .postYanong(let query):
             let encoder = JSONEncoder()
             return try? encoder.encode(query)
+        case .likePost(_, let query):
+            let encoder = JSONEncoder()
+            return try? encoder.encode(query)
         default:
             return nil
         }
@@ -77,6 +86,10 @@ extension Router: TargetType {
             return "/posts"
         case .postYanong:
             return "/posts"
+        case .likePost(let post_id, _):
+            return "/posts/\(post_id)/like"
+        case .fetchLikePost:
+            return "/posts/likes/me"
         }
     }
     
@@ -107,6 +120,20 @@ extension Router: TargetType {
                 Header.sesacKey.rawValue: APIKey.key
             ]
         case .postYanong:
+            return [
+                Header.authorization.rawValue: UserDefaultsManager.shared.token,
+                Header.contentType.rawValue: Header.json.rawValue,
+                Header.refresh.rawValue: UserDefaultsManager.shared.refreshToken,
+                Header.sesacKey.rawValue: APIKey.key
+            ]
+        case .likePost:
+            return [
+                Header.authorization.rawValue: UserDefaultsManager.shared.token,
+                Header.contentType.rawValue: Header.json.rawValue,
+                Header.refresh.rawValue: UserDefaultsManager.shared.refreshToken,
+                Header.sesacKey.rawValue: APIKey.key
+            ]
+        case .fetchLikePost:
             return [
                 Header.authorization.rawValue: UserDefaultsManager.shared.token,
                 Header.contentType.rawValue: Header.json.rawValue,

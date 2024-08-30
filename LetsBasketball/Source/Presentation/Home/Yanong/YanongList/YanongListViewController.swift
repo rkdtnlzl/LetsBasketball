@@ -72,6 +72,7 @@ final class YanongListViewController: BaseViewController {
         tableView.rx.modelSelected(AllGetPostData.self)
             .subscribe(with: self, onNext: { owner, data in
                 let vc = DetailYanongViewController()
+                vc.viewModel.post_id = data.post_id
                 vc.detailYanongView.titleLabel.text = data.title
                 vc.detailYanongView.contentLabel.text = data.content
                 vc.detailYanongView.regionLabel.text = data.product_id
