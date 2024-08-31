@@ -47,6 +47,7 @@ final class LoginView: BaseView {
         passwordTextField.layer.cornerRadius = 10
         passwordTextField.layer.borderColor = UIColor.gray.cgColor
         passwordTextField.layer.borderWidth = 0.7
+        passwordTextField.isSecureTextEntry = true
         
         loginButton.setTitle("로그인하기", for: .normal)
         loginButton.setTitleColor(.white, for: .normal)
