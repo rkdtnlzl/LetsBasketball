@@ -48,4 +48,9 @@ final class RecentCollectionViewCell: BaseCollectionViewCell {
             make.bottom.equalToSuperview().inset(20)
         }
     }
+    
+    func configure(with post: RecentTable) {
+        titleLabel.text = post.title
+        descriptionLabel.text = post.content
+    }
 }
