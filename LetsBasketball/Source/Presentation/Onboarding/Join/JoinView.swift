@@ -40,7 +40,7 @@ final class JoinView: BaseView {
     
     override func configureUI() {
         nicknameLabel.text = "닉네임"
-        nicknameLabel.font = UIFont(name: "Pretendard-Regular", size: 15)
+        nicknameLabel.font = UIFont(name: "Pretendard-SemiBold", size: 15)
         nicknameLabel.textColor = UIColor(named: "BaseColor")
         
         nicknameTextField.addLeftPadding()
@@ -54,7 +54,7 @@ final class JoinView: BaseView {
         nicknameValid.textColor = UIColor(named: "BaseColor")
         
         emailLabel.text = "이메일"
-        emailLabel.font = UIFont(name: "Pretendard-Regular", size: 15)
+        emailLabel.font = UIFont(name: "Pretendard-SemiBold", size: 15)
         emailLabel.textColor = UIColor(named: "BaseColor")
         
         emailTextField.addLeftPadding()
@@ -68,7 +68,7 @@ final class JoinView: BaseView {
         emailValid.textColor = UIColor(named: "BaseColor")
         
         passwordLabel.text = "비밀번호"
-        passwordLabel.font = UIFont(name: "Pretendard-Regular", size: 15)
+        passwordLabel.font = UIFont(name: "Pretendard-SemiBold", size: 15)
         passwordLabel.textColor = UIColor(named: "BaseColor")
         
         passwordTextField.addLeftPadding()
@@ -77,6 +77,7 @@ final class JoinView: BaseView {
         passwordTextField.layer.cornerRadius = 10
         passwordTextField.layer.borderColor = UIColor.gray.cgColor
         passwordTextField.layer.borderWidth = 0.7
+        passwordTextField.isSecureTextEntry = true
         
         passwordValid.font = UIFont(name: "Pretendard-Regular", size: 13)
         passwordValid.textColor = UIColor(named: "BaseColor")
@@ -87,6 +88,7 @@ final class JoinView: BaseView {
         passwordConfirmTextField.layer.cornerRadius = 10
         passwordConfirmTextField.layer.borderColor = UIColor.gray.cgColor
         passwordConfirmTextField.layer.borderWidth = 0.7
+        passwordConfirmTextField.isSecureTextEntry = true
         
         passwordConfirmValid.font = UIFont(name: "Pretendard-Regular", size: 13)
         passwordConfirmValid.textColor = UIColor(named: "BaseColor")

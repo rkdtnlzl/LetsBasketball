@@ -7,6 +7,7 @@
 
 import UIKit
 import RxSwift
+import RealmSwift
 
 final class DetailYanongViewController: BaseViewController {
     deinit {
@@ -26,6 +27,7 @@ final class DetailYanongViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bind()
+        saveRecentPost()
     }
     
     override func configureNavigation() {
@@ -64,5 +66,27 @@ final class DetailYanongViewController: BaseViewController {
         vc.latitude = latitude
         vc.longitude = longitude
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    private func saveRecentPost() {
+        guard let postTitle = detailYanongView.titleLabel.text, let postContent = detailYanongView.contentLabel.text else {
+            return
+        }
+        
+        let recentPost = RecentTable(title: postTitle, content: postContent, viewDate: Date())
+        
+        let realm = try! Realm()
+        
+        print(postTitle, postContent)
+        
+        if let existingPost = realm.objects(RecentTable.self).filter("title = %@ AND content = %@", postTitle, postContent).first {
+            try! realm.write {
+                existingPost.viewDate = Date()
+            }
+        } else {
+            try! realm.write {
+                realm.add(recentPost)
+            }
+        }
     }
 }
