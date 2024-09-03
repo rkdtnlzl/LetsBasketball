@@ -10,6 +10,9 @@ import RxSwift
 import RxCocoa
 
 final class YanongListViewController: BaseViewController {
+    deinit {
+        print("deinit \(self)")
+    }
     
     let tableView = UITableView()
     private let viewModel: YanongListViewModel

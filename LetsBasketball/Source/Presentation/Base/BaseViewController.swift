@@ -23,6 +23,20 @@ class BaseViewController: UIViewController {
         configureConstraints()
         configureTarget()
         configureNavigation()
+        hideKeyboard()
+    }
+    
+    func hideKeyboard() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(self.dismissKeyboard)
+        )
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     func configureHierarchy() { }
