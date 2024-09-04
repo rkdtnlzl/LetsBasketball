@@ -7,6 +7,7 @@
 
 import UIKit
 import KakaoMapsSDK
+import iamport_ios
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         SDKInitializer.InitSDK(appKey: APIKey.kakaoAppKey)
         
+        return true
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        Iamport.shared.receivedURL(url)
         return true
     }
 
