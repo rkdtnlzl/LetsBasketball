@@ -17,6 +17,7 @@ final class DetailYanongView: BaseView {
     let regionLabel = UILabel()
     let mapThumbnail = UIImageView()
     let mapButton = UIButton()
+    let payButton = UIButton()
     
     override func configureHierarchy() {
         addSubview(titleLabel)
@@ -26,6 +27,7 @@ final class DetailYanongView: BaseView {
         regionView.addSubview(regionLabel)
         addSubview(mapThumbnail)
         mapThumbnail.addSubview(mapButton)
+        addSubview(payButton)
     }
     
     override func configureUI() {
@@ -54,6 +56,12 @@ final class DetailYanongView: BaseView {
         mapThumbnail.isUserInteractionEnabled = true
         
         mapButton.backgroundColor = .clear
+        
+        payButton.setTitle("신청하기", for: .normal)
+        payButton.setTitleColor(.white, for: .normal)
+        payButton.titleLabel?.font = UIFont(name: "Pretendard-SemiBold", size: 17)
+        payButton.backgroundColor = UIColor(named: "BaseColor")
+        payButton.layer.cornerRadius = 10
     }
     
     override func configureConstraints() {
@@ -82,6 +90,11 @@ final class DetailYanongView: BaseView {
         }
         mapButton.snp.makeConstraints { make in
             make.edges.equalToSuperview()
+        }
+        payButton.snp.makeConstraints { make in
+            make.bottom.equalToSuperview().inset(80)
+            make.horizontalEdges.equalToSuperview().inset(20)
+            make.height.equalTo(48)
         }
     }
 }
