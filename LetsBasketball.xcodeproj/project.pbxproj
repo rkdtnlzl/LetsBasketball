@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		012C427D2C87416A00C78861 /* iamport-ios in Frameworks */ = {isa = PBXBuildFile; productRef = 012C427C2C87416A00C78861 /* iamport-ios */; };
+		012C42842C8859AA00C78861 /* PayValidationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012C42832C8859AA00C78861 /* PayValidationModel.swift */; };
+		012C42862C885C9600C78861 /* PayValidationQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012C42852C885C9600C78861 /* PayValidationQuery.swift */; };
 		01D112542C747554006B20BB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D112532C747554006B20BB /* NetworkManager.swift */; };
 		01D112732C7610A5006B20BB /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = 01D112722C7610A5006B20BB /* Tabman */; };
 		01D1127C2C771D2C006B20BB /* LBRequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D1127B2C771D2C006B20BB /* LBRequestInterceptor.swift */; };
@@ -95,6 +97,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		012C42832C8859AA00C78861 /* PayValidationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayValidationModel.swift; sourceTree = "<group>"; };
+		012C42852C885C9600C78861 /* PayValidationQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayValidationQuery.swift; sourceTree = "<group>"; };
 		01D112532C747554006B20BB /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		01D1127B2C771D2C006B20BB /* LBRequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LBRequestInterceptor.swift; sourceTree = "<group>"; };
 		01D1127F2C776E4F006B20BB /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
@@ -195,6 +199,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		012C42802C88597900C78861 /* Iamport */ = {
+			isa = PBXGroup;
+			children = (
+				012C42822C88598D00C78861 /* ResponseDTO */,
+				012C42812C88598700C78861 /* RequestDTO */,
+			);
+			path = Iamport;
+			sourceTree = "<group>";
+		};
+		012C42812C88598700C78861 /* RequestDTO */ = {
+			isa = PBXGroup;
+			children = (
+				012C42852C885C9600C78861 /* PayValidationQuery.swift */,
+			);
+			path = RequestDTO;
+			sourceTree = "<group>";
+		};
+		012C42822C88598D00C78861 /* ResponseDTO */ = {
+			isa = PBXGroup;
+			children = (
+				012C42832C8859AA00C78861 /* PayValidationModel.swift */,
+			);
+			path = ResponseDTO;
+			sourceTree = "<group>";
+		};
 		01D112832C78A81E006B20BB /* Yanong */ = {
 			isa = PBXGroup;
 			children = (
@@ -389,6 +418,7 @@
 		01E409562C6CE3DB0006B86F /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				012C42802C88597900C78861 /* Iamport */,
 				01D112D42C7E2CA7006B20BB /* KakaoAddress */,
 				01D112842C78A850006B20BB /* Refresh */,
 				01D112832C78A81E006B20BB /* Yanong */,
@@ -699,6 +729,7 @@
 				01E409B42C735C140006B86F /* FavoriteViewController.swift in Sources */,
 				01E409812C7079C30006B86F /* Router.swift in Sources */,
 				01E409B62C735C280006B86F /* ProfileViewController.swift in Sources */,
+				012C42862C885C9600C78861 /* PayValidationQuery.swift in Sources */,
 				01E409242C6CD0C60006B86F /* AppDelegate.swift in Sources */,
 				01D112F02C80AD05006B20BB /* LikePostModel.swift in Sources */,
 				01E409482C6CDD020006B86F /* APIKey.swift in Sources */,
@@ -709,6 +740,7 @@
 				01D1132E2C82EC55006B20BB /* RealmManager.swift in Sources */,
 				01D112A32C7B4F61006B20BB /* DetailYanongView.swift in Sources */,
 				01E409A72C7325010006B86F /* LBSearchView.swift in Sources */,
+				012C42842C8859AA00C78861 /* PayValidationModel.swift in Sources */,
 				01E409262C6CD0C60006B86F /* SceneDelegate.swift in Sources */,
 				01E409AB2C73449D0006B86F /* RecentCollectionViewCell.swift in Sources */,
 				01E4097D2C6DECE10006B86F /* JoinViewController.swift in Sources */,

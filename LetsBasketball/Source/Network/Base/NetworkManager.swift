@@ -258,4 +258,31 @@ final class NetworkManager {
             return Disposables.create()
         }
     }
+    
+    // MARK: 결제 영수증 검증
+    func payValidation(imp_uid: String, post_id: String) -> Observable<PayValidationModel> {
+        return Observable.create { observer in
+            do {
+                let query = PayValidationQuery(imp_uid: imp_uid, post_id: post_id)
+                let request = try Router.payValidation(query: query).asURLRequest()
+                
+                AF.request(request)
+                    .responseDecodable(of: PayValidationModel.self) { response in
+                        switch response.result {
+                        case .success(let success):
+                            print(success)
+                            observer.onNext(success)
+                            observer.onCompleted()
+                            
+                        case .failure(let failure):
+                            print(failure)
+                            observer.onError(failure)
+                        }
+                    }
+            } catch {
+                observer.onError(error)
+            }
+            return Disposables.create()
+        }
+    }
 }
