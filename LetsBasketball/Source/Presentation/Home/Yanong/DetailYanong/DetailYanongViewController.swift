@@ -8,6 +8,8 @@
 import UIKit
 import RxSwift
 import RealmSwift
+import iamport_ios
+import WebKit
 
 final class DetailYanongViewController: BaseViewController {
     deinit {
@@ -19,6 +21,12 @@ final class DetailYanongViewController: BaseViewController {
     
     var latitude: String = ""
     var longitude: String = ""
+    
+    lazy var wkWebView: WKWebView = {
+        var view = WKWebView()
+        view.backgroundColor = UIColor.clear
+        return view
+    }()
     
     override func loadView() {
         self.view = detailYanongView
@@ -36,6 +44,46 @@ final class DetailYanongViewController: BaseViewController {
     
     override func configureTarget() {
         detailYanongView.mapButton.addTarget(self, action: #selector(mapButtonClicked), for: .touchUpInside)
+        detailYanongView.payButton.addTarget(self, action: #selector(payButtonClicked), for: .touchUpInside)
+    }
+    
+    @objc func payButtonClicked() {
+        let payment = IamportPayment(
+            pg: PG.html5_inicis.makePgRawName(pgId: "INIpayTest"),
+            merchant_uid: "ios_\(APIKey.key)_\(Int(Date().timeIntervalSince1970))",
+            amount: "100").then {
+                $0.pay_method = PayMethod.card.rawValue
+                $0.name = "농구 매칭 결제"
+                $0.buyer_name = "강석호"
+                $0.app_scheme = "sesac"
+            }
+        
+        createAndLoadWebView()
+        
+        Iamport.shared.paymentWebView(
+            webViewMode: wkWebView,
+            userCode: APIKey.iamportUserCode,
+            payment: payment) { [weak self] response in
+                print(String(describing: response))
+                
+                let uid = response?.imp_uid ?? ""
+                let post_id = self?.viewModel.post_id ?? ""
+                
+                NetworkManager.shared.payValidation(imp_uid: uid, post_id: post_id)
+                    .subscribe(onNext: { valid in
+                        self?.showAlert(title: "결제 성공")
+                    }, onError: { error in
+                        self?.showAlert(title: "결제 실패")
+                    })
+                    .disposed(by: self!.disposeBag)
+            }
+    }
+    
+    private func createAndLoadWebView() {
+        view.addSubview(wkWebView)
+        wkWebView.snp.makeConstraints { make in
+            make.edges.equalTo(view.safeAreaLayoutGuide)
+        }
     }
     
     private func bind() {

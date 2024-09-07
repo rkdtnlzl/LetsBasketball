@@ -16,6 +16,7 @@ enum Router {
     case postYanong(query: PostYanongQuery)
     case likePost(post_id: String, query: LikePostQuery)
     case fetchLikePost
+    case payValidation(query: PayValidationQuery)
 }
 
 extension Router: TargetType {
@@ -35,6 +36,8 @@ extension Router: TargetType {
             return .post
         case .fetchLikePost:
             return .get
+        case .payValidation:
+            return .post
         }
     }
     
@@ -65,6 +68,9 @@ extension Router: TargetType {
         case .likePost(_, let query):
             let encoder = JSONEncoder()
             return try? encoder.encode(query)
+        case .payValidation(let query):
+            let encoder = JSONEncoder()
+            return try? encoder.encode(query)
         default:
             return nil
         }
@@ -90,6 +96,8 @@ extension Router: TargetType {
             return "/posts/\(post_id)/like"
         case .fetchLikePost:
             return "/posts/likes/me"
+        case .payValidation:
+            return "/payments/validation"
         }
     }
     
@@ -134,6 +142,13 @@ extension Router: TargetType {
                 Header.sesacKey.rawValue: APIKey.key
             ]
         case .fetchLikePost:
+            return [
+                Header.authorization.rawValue: UserDefaultsManager.shared.token,
+                Header.contentType.rawValue: Header.json.rawValue,
+                Header.refresh.rawValue: UserDefaultsManager.shared.refreshToken,
+                Header.sesacKey.rawValue: APIKey.key
+            ]
+        case .payValidation:
             return [
                 Header.authorization.rawValue: UserDefaultsManager.shared.token,
                 Header.contentType.rawValue: Header.json.rawValue,

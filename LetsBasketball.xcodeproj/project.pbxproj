@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		012C427D2C87416A00C78861 /* iamport-ios in Frameworks */ = {isa = PBXBuildFile; productRef = 012C427C2C87416A00C78861 /* iamport-ios */; };
+		012C42842C8859AA00C78861 /* PayValidationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012C42832C8859AA00C78861 /* PayValidationModel.swift */; };
+		012C42862C885C9600C78861 /* PayValidationQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012C42852C885C9600C78861 /* PayValidationQuery.swift */; };
 		01D112542C747554006B20BB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D112532C747554006B20BB /* NetworkManager.swift */; };
 		01D112732C7610A5006B20BB /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = 01D112722C7610A5006B20BB /* Tabman */; };
 		01D1127C2C771D2C006B20BB /* LBRequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D1127B2C771D2C006B20BB /* LBRequestInterceptor.swift */; };
@@ -94,6 +97,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		012C42832C8859AA00C78861 /* PayValidationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayValidationModel.swift; sourceTree = "<group>"; };
+		012C42852C885C9600C78861 /* PayValidationQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayValidationQuery.swift; sourceTree = "<group>"; };
 		01D112532C747554006B20BB /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		01D1127B2C771D2C006B20BB /* LBRequestInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LBRequestInterceptor.swift; sourceTree = "<group>"; };
 		01D1127F2C776E4F006B20BB /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
@@ -179,6 +184,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				012C427D2C87416A00C78861 /* iamport-ios in Frameworks */,
 				01D113282C82E954006B20BB /* RealmSwift in Frameworks */,
 				01E409412C6CD6EC0006B86F /* RxCocoa in Frameworks */,
 				01E4093E2C6CD6D60006B86F /* Kingfisher in Frameworks */,
@@ -193,6 +199,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		012C42802C88597900C78861 /* Iamport */ = {
+			isa = PBXGroup;
+			children = (
+				012C42822C88598D00C78861 /* ResponseDTO */,
+				012C42812C88598700C78861 /* RequestDTO */,
+			);
+			path = Iamport;
+			sourceTree = "<group>";
+		};
+		012C42812C88598700C78861 /* RequestDTO */ = {
+			isa = PBXGroup;
+			children = (
+				012C42852C885C9600C78861 /* PayValidationQuery.swift */,
+			);
+			path = RequestDTO;
+			sourceTree = "<group>";
+		};
+		012C42822C88598D00C78861 /* ResponseDTO */ = {
+			isa = PBXGroup;
+			children = (
+				012C42832C8859AA00C78861 /* PayValidationModel.swift */,
+			);
+			path = ResponseDTO;
+			sourceTree = "<group>";
+		};
 		01D112832C78A81E006B20BB /* Yanong */ = {
 			isa = PBXGroup;
 			children = (
@@ -387,6 +418,7 @@
 		01E409562C6CE3DB0006B86F /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				012C42802C88597900C78861 /* Iamport */,
 				01D112D42C7E2CA7006B20BB /* KakaoAddress */,
 				01D112842C78A850006B20BB /* Refresh */,
 				01D112832C78A81E006B20BB /* Yanong */,
@@ -574,6 +606,7 @@
 				01D112722C7610A5006B20BB /* Tabman */,
 				01D112B42C7C98B0006B20BB /* KakaoMapsSDK-SPM */,
 				01D113272C82E954006B20BB /* RealmSwift */,
+				012C427C2C87416A00C78861 /* iamport-ios */,
 			);
 			productName = LetsBasketball;
 			productReference = 01E409202C6CD0C60006B86F /* LetsBasketball.app */;
@@ -611,6 +644,7 @@
 				01D112712C7610A5006B20BB /* XCRemoteSwiftPackageReference "Tabman" */,
 				01D112B32C7C98B0006B20BB /* XCRemoteSwiftPackageReference "KakaoMapsSDK-SPM" */,
 				01D113262C82E954006B20BB /* XCRemoteSwiftPackageReference "realm-swift" */,
+				012C427B2C87416A00C78861 /* XCRemoteSwiftPackageReference "iamport-ios" */,
 			);
 			productRefGroup = 01E409212C6CD0C60006B86F /* Products */;
 			projectDirPath = "";
@@ -695,6 +729,7 @@
 				01E409B42C735C140006B86F /* FavoriteViewController.swift in Sources */,
 				01E409812C7079C30006B86F /* Router.swift in Sources */,
 				01E409B62C735C280006B86F /* ProfileViewController.swift in Sources */,
+				012C42862C885C9600C78861 /* PayValidationQuery.swift in Sources */,
 				01E409242C6CD0C60006B86F /* AppDelegate.swift in Sources */,
 				01D112F02C80AD05006B20BB /* LikePostModel.swift in Sources */,
 				01E409482C6CDD020006B86F /* APIKey.swift in Sources */,
@@ -705,6 +740,7 @@
 				01D1132E2C82EC55006B20BB /* RealmManager.swift in Sources */,
 				01D112A32C7B4F61006B20BB /* DetailYanongView.swift in Sources */,
 				01E409A72C7325010006B86F /* LBSearchView.swift in Sources */,
+				012C42842C8859AA00C78861 /* PayValidationModel.swift in Sources */,
 				01E409262C6CD0C60006B86F /* SceneDelegate.swift in Sources */,
 				01E409AB2C73449D0006B86F /* RecentCollectionViewCell.swift in Sources */,
 				01E4097D2C6DECE10006B86F /* JoinViewController.swift in Sources */,
@@ -858,10 +894,12 @@
 				DEVELOPMENT_TEAM = 7S6PH8TVFD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LetsBasketball/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "앱 사용 시 위치 접근을 허용해 주세요.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -891,10 +929,12 @@
 				DEVELOPMENT_TEAM = 7S6PH8TVFD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LetsBasketball/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "앱 사용 시 위치 접근을 허용해 주세요.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -938,6 +978,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		012C427B2C87416A00C78861 /* XCRemoteSwiftPackageReference "iamport-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/iamport/iamport-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.2;
+			};
+		};
 		01D112712C7610A5006B20BB /* XCRemoteSwiftPackageReference "Tabman" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/uias/Tabman.git";
@@ -959,7 +1007,7 @@
 			repositoryURL = "https://github.com/realm/realm-swift.git";
 			requirement = {
 				kind = exactVersion;
-				version = 10.51.0;
+				version = 10.49.0;
 			};
 		};
 		01E409392C6CD6CC0006B86F /* XCRemoteSwiftPackageReference "Alamofire" */ = {
@@ -997,6 +1045,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		012C427C2C87416A00C78861 /* iamport-ios */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 012C427B2C87416A00C78861 /* XCRemoteSwiftPackageReference "iamport-ios" */;
+			productName = "iamport-ios";
+		};
 		01D112722C7610A5006B20BB /* Tabman */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 01D112712C7610A5006B20BB /* XCRemoteSwiftPackageReference "Tabman" */;
