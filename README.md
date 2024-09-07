@@ -11,3 +11,45 @@
 <img src="https://github.com/user-attachments/assets/38772103-f9bf-4961-a17c-7f55e5437e98" width="200" height="450" />
 <img src="https://github.com/user-attachments/assets/3bc5d47f-2723-47b2-9f11-426ab1438af3" width="200" height="450" />
 <img src="https://github.com/user-attachments/assets/53e6ceb9-f8ac-4887-af4b-3e16dd047980" width="200" height="450" />
+
+## 디렉토링 구조
+
+```
+.
+├── APIKey.swift
+├── APIUrl.swift
+├── Info.plist
+├── MyPrivacyInfo.plist
+├── Resource
+│   ├── Assets.xcassets 
+│   ├── Base.lproj
+│   └── Font
+└── Source
+    ├── Application
+    ├── Extension
+    ├── Network
+    │   ├── Base
+    │   ├── Iamport
+    │   ├── KakaoAddress
+    │   ├── Onboarding
+    │   ├── Refresh
+    │   └── Yanong
+    ├── Presentation
+    │   ├── Base
+    │   ├── Favorite
+    │   ├── Home
+    │   │   ├── Home
+    │   │   └── Yanong
+    │   │       ├── DetailYanong
+    │   │       ├── PostYanong
+    │   │       └── YanongList
+    │   ├── KakaoMap
+    │   ├── Onboarding
+    │   │   ├── Join
+    │   │   └── Login
+    │   ├── Profile
+    │   ├── Recent
+    │   └── TabBar
+    ├── Realm
+    └── Util
+```
