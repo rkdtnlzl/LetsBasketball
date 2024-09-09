@@ -12,6 +12,29 @@
 <img src="https://github.com/user-attachments/assets/3bc5d47f-2723-47b2-9f11-426ab1438af3" width="200" height="450" />
 <img src="https://github.com/user-attachments/assets/53e6ceb9-f8ac-4887-af4b-3e16dd047980" width="200" height="450" />
 
+## 개발 환경
+- iOS 13.0 +
+- Xcode 15.3
+
+
+## 기술 스택
+
+### 1.Architecture
+- **MVVM** + **RxSwift** **(In-Out-Pattern)**
+
+### 2.사용 라이브러리
+- SnapKit (Layout)
+- Iamport (PG 결제)
+- Tabman (페이지뷰 구현)
+- Realm (최근 본 게시글 구현)
+- MapKit (농구장 위치 좌표 공유)
+
+### Network
+- **Alamofire**를 통해 네트워크 통신 구현
+- **Alamofire Interceptor**를 활용하여 토큰 갱신 기능 구현
+- **Router Pattern**을 통해 네트워크 통신 관리 
+  
+
 ## 디렉토링 구조
 
 ```
