@@ -20,7 +20,7 @@
 ## 기술 스택
 
 ### 1.Architecture
-- **MVVM** + **RxSwift** **(In-Out-Pattern)**
+- **MVVM** + **RxSwift** **(Input-Output-Pattern)**
 
 ### 2.사용 라이브러리
 - SnapKit (Layout)
