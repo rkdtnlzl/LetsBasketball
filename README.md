@@ -30,9 +30,8 @@
 - MapKit (농구장 위치 좌표 공유)
 
 ### Network
-- **Alamofire**를 통해 네트워크 통신 구현
 - **Alamofire Interceptor**를 활용하여 토큰 갱신 기능 구현
-- **Router Pattern**을 통해 네트워크 통신 관리 
+- **Router Pattern**을 통해 네트워크 통신 관리 및 추상화 
   
 
 ## 디렉토링 구조
