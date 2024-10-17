@@ -10,6 +10,25 @@
 <img src="https://github.com/user-attachments/assets/3bc5d47f-2723-47b2-9f11-426ab1438af3" width="200" height="450" />
 <img src="https://github.com/user-attachments/assets/53e6ceb9-f8ac-4887-af4b-3e16dd047980" width="200" height="450" />
 
+## 💁 프로젝트 정보
+- 기간 : 2024.08.14 ~ 2024.09.04 (약 3주)
+- 개발 인원 : 1명
+- 지원 버전: iOS 13.0 +
+
+- **주요 기능**
+
+  - `야외 농구 게시글 조회`
+    - 지역별 모집글 조회 기능 제공
+    - 제스처를 활용한 지역별 게시글 목록 조회 기능 제공
+   
+  - `지역별 게시글 작성`
+    - 지도 마커를 통해 위치 등록 기능
+    - 마커 위치에 따른 지역별 게시글 분리 기능
+   
+  - `기타 기능`
+    - 좋아요 게시글 저장 기능
+    - 최근 본 게시글 저장 기능 제공
+<br>
 
 ## 🛠️ 기술 스택
 ### 1.Architecture
@@ -27,10 +46,6 @@
 - **Alamofire Interceptor**를 활용하여 토큰 갱신 기능 구현
 - **Router Pattern**을 통해 네트워크 통신 관리 및 추상화
 
-## 개발 환경
-- 🍎 iOS 13.0 +
-- 💻 Xcode 15.3
-  
 
 ## 디렉토링 구조
 
